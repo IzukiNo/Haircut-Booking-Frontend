@@ -1,3 +1,4 @@
+/* css/pages/registration.css - Tối ưu và Responsive bởi Công nghệ phần mềm */
 
 /* ==================================== */
 /* 1. Wrapper và Bố cục Desktop */
@@ -11,7 +12,7 @@
 .registration-wrapper {
     width: 100vw; 
     height: 100vh;
-    min-height: 1024px;
+    min-height: 800px;
     position: relative;
     background: var(--color-white);
     display: flex;
@@ -34,6 +35,7 @@
     justify-content: flex-start;
     align-items: center;
     padding-left: 120px;
+    box-sizing: border-box;
 }
 
 .sidebar-content {
@@ -67,19 +69,21 @@
     justify-content: flex-end;
     align-items: center;
     z-index: 1; 
+    padding-right: 120px;
+    box-sizing: border-box;
 }
 
 .registration-form-content {
-    margin-right: 120px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 60px;
-    width: 480px;
+    width: 100%;
+    max-width: 480px;
 }
 
 .form-title { color: #181821; font-size: 48px; font-weight: 700; align-self: stretch; }
-.form-input-group { display: flex; flex-direction: column; align-items: center; gap: 20px; position: relative; width: 100%; }
+.form-input-group { display: flex; flex-direction: column; align-items: center; gap: 20px; width: 100%; }
 .input-field { width: 100%; height: 60px; position: relative; }
 .input-box { width: 100%; height: 100%; background: #DCE0E3; border-radius: 10px; }
 .input-label { position: absolute; left: 100px; top: 50%; transform: translateY(-50%); color: #595959; font-size: 20px; font-weight: 700; }
@@ -90,17 +94,59 @@
 .social-platforms { display: flex; justify-content: center; align-items: center; gap: 30px; }
 .social-icon-box { width: 44px; height: 44px; background: var(--color-white); border-radius: 5px; border: 2px solid #595959; display: flex; justify-content: center; align-items: center; }
 
-/* 4. Responsive Styles */
+
+/* ==================================== */
+/* 4. Responsive Styles (ĐÃ ĐIỀU CHỈNH) */
+/* ==================================== */
+
 @media (max-width: 1024px) {
-    .registration-wrapper { height: auto; min-height: 100vh; flex-direction: column-reverse; justify-content: flex-start; }
-    .registration-sidebar { position: static; width: 100%; height: 300px; border-radius: 250px 250px 0 0; padding-left: 0; }
-    .sidebar-content { margin: 0; padding-top: 50px; }
-    .registration-form-area { position: static; width: 100%; padding: 50px 20px; }
-    .registration-form-content { margin: 0; width: 80%; max-width: 480px; gap: 40px; }
-    .input-field, .btn-registration-submit { width: 100%; }
+    .registration-wrapper {
+        height: auto;
+        min-height: 100vh;
+        flex-direction: column; 
+    }
+    
+    .registration-sidebar {
+        position: static;
+        width: 100%;
+        height: 300px;
+        border-radius: 80px 80px 0 0; /* Bo tròn trên */
+        padding: 0 20px;
+        justify-content: center;
+    }
+    
+    .sidebar-content {
+        padding: 0;
+    }
+    
+    .registration-form-area {
+        position: static;
+        width: 100%;
+        padding: 60px 40px;
+        justify-content: center;
+    }
+    
+    .registration-form-content {
+        margin: 0 auto;
+        max-width: 450px;
+        gap: 40px;
+    }
 }
+
 @media (max-width: 768px) {
-    .registration-sidebar { height: 250px; border-radius: 150px 150px 0 0; }
+    .registration-sidebar {
+        height: 250px;
+        border-radius: 60px 60px 0 0;
+    }
+
     .sidebar-title { font-size: 36px; }
-    .input-label, .input-icon { font-size: 16px; left: 20px; }
+    .sidebar-text { font-size: 18px; }
+    .btn-login-link { font-size: 20px; padding: 15px 70px; }
+
+    .form-title { font-size: 40px; }
+    .registration-form-content { gap: 30px; }
+    .input-field { height: 55px; }
+
+    .input-icon { display: none; }
+    .input-label { left: 50%; transform: translate(-50%, -50%); }
 }
