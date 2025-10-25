@@ -1,0 +1,12 @@
+@media (max-width:1024px){
+.cards,.service-grid,.team-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.promo__wrap{flex-direction:column}
+.brands__wrap{flex-direction:column;align-items:flex-start}
+}
+@media (max-width:640px){
+.h1{font-size:42px}
+.h2{font-size:34px}
+.cards,.service-grid,.team-grid,.footer .cards,.testimonials .cards{grid-template-columns:1fr}
+.counter__wrap{gap:40px}
+.form__group{grid-template-columns:1fr}
+}
