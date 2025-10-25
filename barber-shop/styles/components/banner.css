@@ -1,0 +1,46 @@
+.banner-section {
+    width: 100%;
+    background-color: var(--color-dark);
+    padding: 60px 0;
+}
+
+/* Home Discount Banner */
+.discount-banner-wrapper {
+    background-color: var(--color-primary);
+    height: 407px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    padding: 0 140px;
+}
+
+.discount-text-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 35px;
+    color: var(--color-black);
+}
+
+.discount-title {
+    font-size: 70px;
+    letter-spacing: 3.5px;
+    color: var(--color-black);
+}
+
+.discount-description {
+    font-size: 16px;
+    color: var(--color-black);
+    max-width: 577px;
+}
+
+.discount-img {
+    width: 562px;
+    height: 528px;
+    object-fit: cover;
+    filter: drop-shadow(35px 35px 35px rgba(0, 0, 0, 0.5));
+    position: relative;
+    bottom: -121px; /* Tạo hiệu ứng nhô lên */
+}

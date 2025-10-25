@@ -1,0 +1,73 @@
+body {
+    font-family: var(--font-body);
+    color: var(--color-white);
+    background-color: var(--color-white);
+    overflow-x: hidden;
+}
+
+h1, h2, h3, .hero-title, .section-title, .card-title, .count-number, .contact-title {
+    font-family: var(--font-heading);
+}
+
+.container {
+    width: 100%;
+    max-width: 1440px;
+    padding: 0 72px;
+    margin: 0 auto;
+}
+
+/* Reusable Section Headers */
+.section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    text-align: center;
+}
+
+.pre-title {
+    color: var(--color-primary);
+    font-size: 19px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.section-title {
+    font-size: 50px;
+    letter-spacing: 2.5px;
+    color: var(--color-white);
+    text-transform: uppercase;
+}
+
+.text-dark {
+    color: var(--color-black);
+}
+
+/* Reusable Buttons */
+.btn {
+    padding: 0 20px;
+    font-weight: 900;
+    text-align: center;
+    text-decoration: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    height: 42px;
+    outline: 2px solid var(--color-primary);
+    color: var(--color-white);
+}
+.btn-login { width: 88px; }
+.btn-book { width: 197px; font-size: 14px; }
+.explore-btn { height: 50px; font-size: 20px; font-weight: 600; color: var(--color-primary); }
+.btn-dark { background-color: var(--color-black); color: var(--color-primary); height: 50px; font-size: 20px; font-weight: 600; }
+.btn-dark-buy { background-color: var(--color-black); color: var(--color-white); height: 50px; font-size: 16px; width: 121px; }
+
+/* Icon Placeholders (Simplifed) */
+.deco-shape, .card-icon, .counter-icon, .contact-icon {
+    /* Dùng để mô phỏng các hình học phức tạp bằng outline */
+    border: 2px solid var(--color-primary);
+    outline-offset: -2px;
+    background: transparent;
+}

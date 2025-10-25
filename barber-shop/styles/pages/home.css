@@ -1,0 +1,137 @@
+/* Home Hero Specific */
+.hero-home {
+    padding-top: 40px;
+    padding-bottom: 184px;
+    gap: 94px;
+}
+
+.hero-home .menu-bar {
+    padding: 0 72px;
+}
+
+.hero-title {
+    font-size: 120px;
+    letter-spacing: 6px;
+    width: 864px;
+    line-height: 1.2;
+}
+
+.hero-est {
+    display: flex;
+    align-items: center;
+    color: var(--color-primary);
+    gap: 10px;
+    /* Styles cho est. 2025 */
+}
+
+.est-text, .est-year {
+    font-family: var(--font-accent);
+    font-size: 30px;
+}
+
+.hero-subtitle {
+    color: var(--color-white);
+    font-size: 40px;
+    font-family: var(--font-heading);
+    margin-top: 50px;
+    text-transform: lowercase;
+}
+
+/* Home Services Preview */
+.services-section-preview {
+    position: relative;
+    width: 100%;
+    background-color: var(--color-black);
+}
+
+.services-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0.5;
+}
+
+.services-overlay {
+    position: relative;
+    z-index: 10;
+    padding: 70px 0 100px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 100px;
+}
+
+.service-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    width: 724px;
+}
+
+/* --- TABLET VIEW (max-width: 1024px) --- */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 40px; /* Giảm padding hai bên */
+    }
+
+    .hero-title {
+        font-size: 90px; /* Giảm cỡ chữ tiêu đề */
+        width: auto;
+    }
+
+    .counter-grid {
+        gap: 60px; /* Giảm khoảng cách giữa các counter */
+        padding: 0 20px;
+    }
+
+    .service-cards-container {
+        width: 100%; /* Cho phép các card chiếm toàn bộ chiều rộng */
+    }
+}
+
+/* --- MOBILE VIEW (max-width: 768px) --- */
+@media (max-width: 768px) {
+    /* Menu sẽ được ẩn và thay bằng Hamburger Menu (xem phần JS) */
+    .menu-links, .menu-actions {
+        display: none;
+    }
+
+    .hero-title {
+        font-size: 60px; /* Tiếp tục giảm cỡ chữ */
+        letter-spacing: 3px;
+    }
+
+    /* Xếp các card thành 1 cột */
+    .service-cards-container, .counter-grid, .testimonial-cards-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .service-card, .counter-item {
+        width: 100%;
+        max-width: 350px; /* Giới hạn chiều rộng tối đa */
+    }
+
+    /* Chỉnh lại Banner */
+    .discount-banner-wrapper {
+        flex-direction: column;
+        height: auto;
+        padding: 40px;
+        text-align: center;
+    }
+
+    .discount-img {
+        position: static;
+        width: 80%;
+        height: auto;
+        margin-top: 20px;
+        filter: none;
+        box-shadow: none;
+    }
+}

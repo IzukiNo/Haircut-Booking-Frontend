@@ -1,7 +1,16 @@
-*,*::before,*::after{box-sizing:border-box}
-html,body{height:100%}
-body,h1,h2,h3,h4,p,figure,blockquote,dl,dd{margin:0}
-ul[role='list'],ol[role='list']{list-style:none}
-body{line-height:1.5;-webkit-font-smoothing:antialiased}
-img,video{max-width:100%;display:block}
-input,button,textarea,select{font:inherit}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}

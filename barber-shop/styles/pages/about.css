@@ -1,0 +1,111 @@
+/* About Page Specific Hero */
+.hero-about {
+    height: 381px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    gap: 100px;
+}
+
+.hero-about .menu-bar {
+    padding: 0 100px;
+}
+
+/* Helper class to change pre-title color */
+.text-primary {
+    color: var(--color-primary);
+}
+
+/* Barbers Section */
+.barbers-section {
+    padding: 60px 0;
+    background-color: var(--color-white);
+}
+
+.barbers-section .section-header {
+    margin-bottom: 60px;
+}
+
+.barber-cards-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+}
+
+.barber-card {
+    width: 410px;
+    height: 520px;
+    background-color: var(--color-dark);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.barber-card:hover {
+    transform: translateY(-10px);
+}
+
+.barber-photo {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+}
+
+.barber-info {
+    flex-grow: 1; /* Make this div fill remaining space */
+    padding: 30px;
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.barber-name {
+    font-size: 22px;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+}
+
+.barber-socials {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icon {
+    display: block;
+    width: 15px;
+    height: 15px;
+    background-color: var(--color-primary);
+    /* In a real project, use SVG icons with mask-image */
+}
+
+.btn-book-barber {
+    width: 156px;
+    height: 40px;
+    background-color: transparent;
+    color: var(--color-primary);
+    font-size: 17px;
+    font-weight: 700;
+    border: none; /* remove default border */
+}
+
+/* --- TABLET VIEW (max-width: 1024px) --- */
+@media (max-width: 1024px) {
+    .barber-cards-grid {
+        gap: 20px;
+    }
+    .barber-card {
+        width: calc(50% - 10px); /* Hiển thị 2 card trên 1 hàng */
+    }
+}
+
+/* --- MOBILE VIEW (max-width: 768px) --- */
+@media (max-width: 768px) {
+    .barber-card {
+        width: 100%; /* Hiển thị 1 card trên 1 hàng */
+        max-width: 410px;
+    }
+}

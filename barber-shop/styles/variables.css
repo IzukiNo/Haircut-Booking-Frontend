@@ -1,11 +1,14 @@
-:root{
---bg:#ffffff;
---ink:#111111;
---ink-2:#979797;
---dark:#212121;
---brand:#E9C664;
---ff-inter:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
---ff-abril:'Abril Fatface',Georgia,'Times New Roman',serif;
---ff-bebas:'Bebas Neue',Impact,system-ui,sans-serif;
---container:1200px;
+:root {
+    /* Colors */
+    --color-primary: #E9C664;
+    --color-secondary: #BE9359;
+    --color-dark: #212121;
+    --color-white: white;
+    --color-gray: #979799;
+    --color-black: black;
+
+    /* Fonts */
+    --font-heading: 'Abril Fatface', serif;
+    --font-accent: 'Bebas Neue', sans-serif;
+    --font-body: 'Inter', sans-serif;
 }

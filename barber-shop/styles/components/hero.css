@@ -1,0 +1,36 @@
+.hero {
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.page-title {
+    font-size: 70px;
+    letter-spacing: 3.5px;
+    color: var(--color-white);
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.hero-content-area {
+    /* Đây là phần chứa ảnh nền lớn */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    /* Đảm bảo Hero bắt đầu ngay sau Nav bar */
+    /* Padding-top của hero-home sẽ được dùng để tạo khoảng cách */
+}

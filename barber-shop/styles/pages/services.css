@@ -1,0 +1,136 @@
+/* Services Hero Specific */
+.hero-services {
+    height: 381px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    gap: 100px;
+}
+
+.hero-services .menu-bar {
+    padding: 0 100px;
+}
+
+/* Services List Section (All Cards) */
+.services-list-section {
+    width: 100%;
+    padding: 60px 0;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-dark);
+}
+
+.services-card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    padding: 0 72px;
+}
+
+/* Prices Section */
+.prices-section {
+    padding: 60px 0;
+    background-color: var(--color-dark);
+}
+
+.prices-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    align-items: center;
+}
+
+.price-list-grid {
+    display: flex;
+    justify-content: center;
+    gap: 170px;
+    width: 100%;
+}
+
+.price-column {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+    flex-basis: 419px;
+}
+
+.price-item {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.item-name, .item-price {
+    font-family: var(--font-heading);
+    font-size: 24px;
+    letter-spacing: 1.2px;
+    color: var(--color-white);
+}
+
+.item-description {
+    font-size: 14px;
+    color: var(--color-white);
+    max-width: 419px;
+}
+
+/* Full Width Discount Banner (Services Page) */
+.discount-banner-full {
+    width: 100%;
+    background-color: var(--color-primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 72px;
+    gap: 72px;
+}
+
+.banner-text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 45px;
+    flex: 1;
+    padding: 60px 0;
+}
+
+.banner-pre-title {
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--color-black);
+    max-width: 287px;
+}
+
+.banner-title {
+    font-size: 58px;
+    letter-spacing: 2.9px;
+    color: var(--color-black);
+    font-family: var(--font-heading);
+    max-width: 452px;
+}
+
+.banner-description {
+    font-size: 16px;
+    color: var(--color-black);
+    max-width: 577px;
+}
+
+.banner-img-box {
+    margin-right: -72px;
+}
+
+.banner-img {
+    width: 526px;
+    height: 535px;
+    object-fit: cover;
+}

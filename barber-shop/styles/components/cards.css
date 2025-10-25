@@ -1,0 +1,32 @@
+/* Service Cards */
+.service-card, .service-card-full {
+    outline: 2px solid var(--color-primary);
+    outline-offset: -2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    text-align: center;
+    color: var(--color-white);
+}
+
+/* Home Preview Cards */
+.service-card {
+    width: 337px;
+    height: 337px;
+    padding: 50px;
+}
+
+/* Services Page Cards */
+.service-card-full {
+    width: 416px;
+    height: 359px;
+    padding: 50px;
+}
+
+.card-title {
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
