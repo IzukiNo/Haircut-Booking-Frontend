@@ -1,62 +1,52 @@
 
-.registration-wrapper {
-    width: 1440px;
-    height: 1024px;
-    position: relative;
-    background: white;
-    overflow: hidden;
-    border-radius: 20px;
-    display: inline-flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 10px;
+/* ==================================== */
+/* 1. Wrapper và Bố cục Desktop */
+/* ==================================== */
+
+.registration-page {
+    font-family: 'Quicksand', sans-serif;
+    color: var(--color-black);
 }
 
-/* Right Side */
-.registration-bg {
-    width: 720px;
-    height: 1024px;
-    background: #212121;
-    /* Giữ nguyên logic rotate */
-    transform: rotate(180deg);
-    transform-origin: top left;
-    border-top-right-radius: 250px;
-    border-bottom-right-radius: 250px;
-    position: absolute;
+.registration-wrapper {
+    width: 100vw; 
+    height: 100vh;
+    min-height: 1024px;
+    position: relative;
+    background: var(--color-white);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* 2. Right Side (Sidebar) */
+.registration-sidebar {
+    width: 50%;
+    height: 100%;
+    background: var(--color-dark);
+    border-top-left-radius: 250px;
+    border-bottom-left-radius: 250px;
+    position: absolute; 
     right: 0;
-    top: 1024px; /* Dịch chuyển xuống để rotate đúng vị trí */
+    top: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 120px;
 }
 
 .sidebar-content {
     width: 353px;
-    position: absolute;
-    left: 904px;
-    top: 412px;
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
     gap: 20px;
-}
-
-.sidebar-title {
-    align-self: stretch;
     text-align: center;
-    color: var(--color-primary);
-    font-size: 48px;
-    font-family: 'Abril Fatface', serif;
-    font-weight: 400;
 }
 
-.sidebar-text {
-    align-self: stretch;
-    text-align: center;
-    color: var(--color-primary);
-    font-size: 24px;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 700;
-}
-
+.sidebar-title { color: var(--color-primary); font-family: 'Abril Fatface', serif; font-size: 48px; }
+.sidebar-text { color: var(--color-primary); font-size: 24px; font-weight: 700; }
 .btn-login-link {
     padding: 20px 90px;
     border-radius: 20px;
@@ -64,115 +54,53 @@
     outline-offset: -1.50px;
     color: var(--color-primary);
     font-size: 24px;
-    font-family: 'Quicksand', sans-serif;
     font-weight: 700;
     text-decoration: none;
 }
 
-/* Left Side */
-.registration-form-container {
-    width: 710px;
-    display: inline-flex;
+/* 3. Left Side (Registration Form) */
+.registration-form-area {
+    width: 50%;
+    height: 100%;
+    position: relative; 
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 1; 
+}
+
+.registration-form-content {
+    margin-right: 120px;
+    display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
     gap: 60px;
-    margin-right: 120px;
-}
-
-.form-title {
-    align-self: stretch;
-    text-align: center;
-    color: #181821;
-    font-size: 48px;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 700;
-}
-
-.form-input-group {
     width: 480px;
-    height: 400px; /* Chiều cao cố định để chứa tất cả phần tử */
-    position: relative;
 }
 
-.input-field {
-    width: 480px;
-    height: 60px;
-    position: absolute;
-    left: 0;
-}
+.form-title { color: #181821; font-size: 48px; font-weight: 700; align-self: stretch; }
+.form-input-group { display: flex; flex-direction: column; align-items: center; gap: 20px; position: relative; width: 100%; }
+.input-field { width: 100%; height: 60px; position: relative; }
+.input-box { width: 100%; height: 100%; background: #DCE0E3; border-radius: 10px; }
+.input-label { position: absolute; left: 100px; top: 50%; transform: translateY(-50%); color: #595959; font-size: 20px; font-weight: 700; }
+.input-icon { position: absolute; left: 40px; top: 50%; transform: translateY(-50%); width: 40px; height: 40px; }
 
-.input-box {
-    width: 100%;
-    height: 100%;
-    background: #DCE0E3;
-    border-radius: 10px;
-}
+.btn-registration-submit { width: 100%; height: 60px; background: var(--color-dark); border-radius: 10px; color: var(--color-primary); font-size: 20px; font-weight: 700; text-transform: uppercase; border: none; cursor: pointer; margin-top: 10px; }
+.social-login-text { color: #595959; font-size: 20px; font-weight: 700; margin-top: 10px; }
+.social-platforms { display: flex; justify-content: center; align-items: center; gap: 30px; }
+.social-icon-box { width: 44px; height: 44px; background: var(--color-white); border-radius: 5px; border: 2px solid #595959; display: flex; justify-content: center; align-items: center; }
 
-.input-label {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    color: #595959;
-    font-size: 20px;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 700;
+/* 4. Responsive Styles */
+@media (max-width: 1024px) {
+    .registration-wrapper { height: auto; min-height: 100vh; flex-direction: column-reverse; justify-content: flex-start; }
+    .registration-sidebar { position: static; width: 100%; height: 300px; border-radius: 250px 250px 0 0; padding-left: 0; }
+    .sidebar-content { margin: 0; padding-top: 50px; }
+    .registration-form-area { position: static; width: 100%; padding: 50px 20px; }
+    .registration-form-content { margin: 0; width: 80%; max-width: 480px; gap: 40px; }
+    .input-field, .btn-registration-submit { width: 100%; }
 }
-
-.input-icon {
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    top: 10px;
-    left: 20px;
-}
-
-.btn-registration-submit {
-    position: absolute;
-    left: 0;
-    top: 240px;
-    width: 480px;
-    height: 60px;
-    background: #212121;
-    border-radius: 10px;
-    color: var(--color-primary);
-    font-size: 20px;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 700;
-    cursor: pointer;
-    border: none;
-}
-
-.social-login-text {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 320px;
-    color: #595959;
-    font-size: 20px;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 700;
-}
-
-.social-platforms {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 360px;
-    display: inline-flex;
-    align-items: center;
-    gap: 30px;
-}
-
-.social-icon-box {
-    width: 44px;
-    height: 44px;
-    background: white;
-    border-radius: 5px;
-    border: 2px solid #595959;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@media (max-width: 768px) {
+    .registration-sidebar { height: 250px; border-radius: 150px 150px 0 0; }
+    .sidebar-title { font-size: 36px; }
+    .input-label, .input-icon { font-size: 16px; left: 20px; }
 }

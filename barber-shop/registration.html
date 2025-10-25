@@ -7,51 +7,59 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Abril+Fatface&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/pages/registration.css"> 
+    <link rel="stylesheet" href="css/pages/registration.css">
 </head>
 <body class="registration-page">
 
     <main class="registration-wrapper">
-        
-        <div class="registration-form-container">
-            <h1 class="form-title">Registration</h1>
-            
-            <div class="form-input-group">
-                <div class="input-field" style="top: 0;">
-                    <div class="input-box"></div>
-                    <label class="input-label">Username</label>
-                    <div class="input-icon icon-user"></div>
-                </div>
-                <div class="input-field" style="top: 80px;">
-                    <div class="input-box"></div>
-                    <label class="input-label">Email</label>
-                    <div class="input-icon icon-email"></div>
-                </div>
-                <div class="input-field" style="top: 160px;">
-                    <div class="input-box"></div>
-                    <label class="input-label">Password</label>
-                    <div class="input-icon icon-lock"></div>
-                </div>
+
+        <div class="registration-form-area">
+            <div class="registration-form-content">
+                <h1 class="form-title">Registration</h1>
                 
-                <button type="submit" class="btn btn-registration-submit">Registration</button>
-                <p class="social-login-text">Or login with social platforms</p>
-                <div class="social-platforms">
-                    <div class="social-icon-box">
-                        <div class="social-icon icon-facebook"></div>
+                <form class="form-input-group" action="#">
+                    <div class="input-field">
+                        <div class="input-box"></div>
+                        <label class="input-label">Username</label>
+                        <div class="input-icon icon-user"></div>
                     </div>
-                    <div class="social-icon-box">
-                        <div class="social-icon icon-google"></div>
+                    
+                    <div class="input-field">
+                        <div class="input-box"></div>
+                        <label class="input-label">Email</label>
+                        <div class="input-icon icon-email"></div>
                     </div>
-                </div>
+                    
+                    <div class="input-field">
+                        <div class="input-box"></div>
+                        <label class="input-label">Password</label>
+                        <div class="input-icon icon-lock"></div>
+                    </div>
+
+                    <button type="submit" class="btn btn-registration-submit">Registration</button>
+                    
+                    <p class="social-login-text">Or login with social platforms</p>
+                    
+                    <div class="social-platforms">
+                        <div class="social-icon-box">
+                            <div class="social-icon icon-facebook"></div>
+                        </div>
+                        <div class="social-icon-box">
+                            <div class="social-icon icon-google"></div>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
-
-        <div class="registration-bg"></div>
-        <div class="sidebar-content">
-            <h2 class="sidebar-title">Welcome Back!</h2>
-            <p class="sidebar-text">Don’t have an account</p>
-            <a href="login.html" class="btn btn-login-link">Login</a>
+        
+        <div class="registration-sidebar">
+            <div class="sidebar-content">
+                <h2 class="sidebar-title">Welcome Back!</h2>
+                <p class="sidebar-text">Already have an account?</p>
+                <a href="login.html" class="btn btn-login-link">Login</a>
+            </div>
         </div>
     </main>
+
 </body>
 </html>
