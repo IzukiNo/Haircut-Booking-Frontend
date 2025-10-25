@@ -1,30 +1,36 @@
 
-.login-wrapper {
+.registration-wrapper {
     width: 1440px;
     height: 1024px;
     position: relative;
     background: white;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 20px;
     display: inline-flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
     align-items: center;
-    gap: 120px;
+    gap: 10px;
 }
 
-/* Left Side */
-.login-bg {
+/* Right Side */
+.registration-bg {
     width: 720px;
     height: 1024px;
     background: #212121;
+    /* Giữ nguyên logic rotate */
+    transform: rotate(180deg);
+    transform-origin: top left;
     border-top-right-radius: 250px;
     border-bottom-right-radius: 250px;
+    position: absolute;
+    right: 0;
+    top: 1024px; /* Dịch chuyển xuống để rotate đúng vị trí */
 }
 
 .sidebar-content {
-    width: 371px;
+    width: 353px;
     position: absolute;
-    left: 175px;
+    left: 904px;
     top: 412px;
     display: inline-flex;
     flex-direction: column;
@@ -35,6 +41,7 @@
 
 .sidebar-title {
     align-self: stretch;
+    text-align: center;
     color: var(--color-primary);
     font-size: 48px;
     font-family: 'Abril Fatface', serif;
@@ -50,8 +57,8 @@
     font-weight: 700;
 }
 
-.btn-registration {
-    padding: 20px 50px;
+.btn-login-link {
+    padding: 20px 90px;
     border-radius: 20px;
     outline: 3px solid var(--color-primary);
     outline-offset: -1.50px;
@@ -62,13 +69,15 @@
     text-decoration: none;
 }
 
-/* Right Side */
-.login-form-container {
+/* Left Side */
+.registration-form-container {
+    width: 710px;
     display: inline-flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     gap: 60px;
+    margin-right: 120px;
 }
 
 .form-title {
@@ -82,7 +91,7 @@
 
 .form-input-group {
     width: 480px;
-    height: 175px; /* Chiều cao cố định để chứa 2 input và link */
+    height: 400px; /* Chiều cao cố định để chứa tất cả phần tử */
     position: relative;
 }
 
@@ -116,43 +125,30 @@
     height: 40px;
     position: absolute;
     top: 10px;
-    left: 20px; /* Căn chỉnh lại icon */
-    /* Icon sẽ cần style chi tiết bằng SVG hoặc pseudo-elements */
+    left: 20px;
 }
 
-.forgot-password {
+.btn-registration-submit {
     position: absolute;
-    bottom: 0;
-    right: 0;
-    color: #595959;
-    font-size: 20px;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 700;
-    text-decoration: none;
-}
-
-.input-controls {
-    align-self: stretch;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-
-.btn-login-submit {
-    align-self: stretch;
+    left: 0;
+    top: 240px;
+    width: 480px;
     height: 60px;
     background: #212121;
     border-radius: 10px;
-    border: none;
     color: var(--color-primary);
     font-size: 20px;
     font-family: 'Quicksand', sans-serif;
     font-weight: 700;
     cursor: pointer;
+    border: none;
 }
 
 .social-login-text {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 320px;
     color: #595959;
     font-size: 20px;
     font-family: 'Quicksand', sans-serif;
@@ -160,6 +156,10 @@
 }
 
 .social-platforms {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 360px;
     display: inline-flex;
     align-items: center;
     gap: 30px;
