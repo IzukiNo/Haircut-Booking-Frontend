@@ -1,184 +1,126 @@
 
 /* --- Base Styles --- */
 .auth-page {
-    background: var(--color-white);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-family: 'Quicksand', sans-serif;
-    height: 100vh;
+    background: #f6f5f7; display: flex; justify-content: center; align-items: center;
+    font-family: 'Quicksand', sans-serif; height: 100vh;
 }
-
-h1 { font-size: 48px; font-weight: 700; color: #181821; }
-.sidebar-title { color: var(--color-primary); font-family: 'Abril Fatface', serif; font-weight: 400; }
-p.sidebar-text { font-size: 24px; font-weight: 700; color: var(--color-primary); margin: 20px 0; }
-span { font-size: 20px; color: #595959; }
-a { color: #595959; font-size: 20px; text-decoration: none; margin: 15px 0; }
+h1 { font-size: 48px; font-weight: 700; color: #181821; margin-bottom: 20px; }
+.sidebar-title { font-family: 'Abril Fatface', serif; font-size: 48px; color: var(--color-primary); }
+p.sidebar-text { font-size: 24px; font-weight: 700; color: var(--color-primary); line-height: 1.4; margin: 20px 0; }
+a { color: #595959; font-size: 20px; text-decoration: none; margin-top: 15px; font-weight: 700; }
+.social-text { font-size: 20px; color: #595959; margin-top: 20px; font-weight: 700; }
 
 button {
-    border-radius: 10px;
-    background-color: var(--color-dark);
-    color: var(--color-primary);
-    font-size: 20px;
-    font-weight: 700;
-    padding: 17px 0;
-    width: 100%;
-    border: none;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: transform 80ms ease-in;
+    border-radius: 10px; 
+    background-color: var(--color-dark); color: var(--color-primary);
+    font-size: 20px; font-weight: 700; padding: 17px 0; width: 100%;
+    border: none; cursor: pointer; transition: transform 80ms ease-in; text-transform: none;
 }
 button:active { transform: scale(0.95); }
 button.ghost {
     background-color: transparent;
-    padding: 20px 50px;
-    border-radius: 20px;
+    border-radius: 20px; 
     outline: 3px solid var(--color-primary);
-    outline-offset: -1.50px;
-    width: auto;
+    padding: 20px 50px; font-size: 24px; width: auto;
 }
-
 form {
-    background-color: var(--color-white);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0 50px;
-    height: 100%;
-    text-align: center;
+    background-color: var(--color-white); display: flex; align-items: center; justify-content: center;
+    flex-direction: column; padding: 0 100px; height: 100%; text-align: center;
 }
-
+.input-field { position: relative; width: 100%; margin: 10px 0; }
 input {
-    background-color: #DCE0E3;
-    border: none;
-    border-radius: 10px;
-    padding: 18px 15px;
-    margin: 8px 0;
-    width: 100%;
-    font-size: 20px;
+    background-color: #DCE0E3; border: none;
+    border-radius: 10px; 
+    padding: 18px 25px 18px 70px;
+    width: 100%; font-size: 20px;
 }
-
-.auth-container {
-    background-color: var(--color-white);
-    border-radius: 20px;
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-    position: relative;
-    overflow: hidden;
-    width: 1440px;
-    max-width: 100%;
-    min-height: 1024px;
-}
-
-.form-container {
-    position: absolute;
-    top: 0;
-    height: 100%;
-    transition: all 0.6s ease-in-out;
-}
-
-.social-container { margin: 20px 0; display: flex; gap: 30px; }
+.social-container { display: flex; gap: 30px; margin-top: 10px; }
 .social {
-    border: 2px solid #595959;
-    border-radius: 5px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    height: 44px;
-    width: 44px;
+    border: 2px solid #595959; border-radius: 5px; display: inline-flex;
+    justify-content: center; align-items: center; height: 44px; width: 44px;
 }
-
-/* --- Logic Vị Trí và Chuyển Động --- */
-.sign-in-container { left: 0; width: 50%; z-index: 2; }
-.sign-up-container { left: 0; width: 50%; opacity: 0; z-index: 1; }
-
-.overlay-container {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 50%;
-    height: 100%;
-    overflow: hidden;
-    transition: transform 0.6s ease-in-out, border-radius 0.6s ease-in-out;
-    z-index: 100;
-    /* BO TRÒN BAN ĐẦU (Giống trang Registration) */
-    border-top-left-radius: 250px;
-    border-bottom-left-radius: 250px;
-}
-
-.overlay {
-    background: var(--color-dark);
+.auth-container {
+    background-color: #fff;
     position: relative;
-    left: -100%;
-    height: 100%;
-    width: 200%;
-    transform: translateX(0);
-    transition: transform 0.6s ease-in-out;
-}
+    overflow: hidden;
 
-.overlay-panel {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0 40px;
-    text-align: center;
-    top: 0;
-    height: 100%;
-    width: 50%;
-    transform: translateX(0);
-    transition: transform 0.6s ease-in-out;
-}
-
-.overlay-left { transform: translateX(-20%); }
-.overlay-right { right: 0; transform: translateX(0); }
-
-/* --- KÍCH HOẠT HIỆU ỨNG (DESKTOP) --- */
-.auth-container.right-panel-active .sign-in-container { transform: translateX(100%); }
-.auth-container.right-panel-active .sign-up-container { transform: translateX(100%); opacity: 1; z-index: 5; animation: show 0.6s; }
-
-.auth-container.right-panel-active .overlay-container {
-    transform: translateX(-100%);
-    /* Đổi bo tròn khi di chuyển (Giống trang Login) */
+    width: 100vw;
+    height: 100vh;
+    
     border-radius: 0;
-    border-top-right-radius: 250px;
-    border-bottom-right-radius: 250px;
+    box-shadow: none;
+    max-width: 100%;
+    min-height: 0;
 }
-.auth-container.right-panel-active .overlay { transform: translateX(50%); }
-.auth-container.right-panel-active .overlay-left { transform: translateX(0); }
-.auth-container.right-panel-active .overlay-right { transform: translateX(20%); }
+.form-container { position: absolute; top: 0; height: 100%; transition: all 0.6s ease-in-out; }
+.mobile-switch { display: none; }
 
-@keyframes show { 0%, 49.99% { opacity: 0; z-index: 1; } 50%, 100% { opacity: 1; z-index: 5; } }
+/* --- ICON STYLES --- */
+.input-icon { position: absolute; top: 50%; left: 30px; transform: translateY(-50%); width: 24px; height: 24px; color: #595959; }
+.input-icon svg { width: 100%; height: 100%; stroke: currentColor; }
+.social svg { width: 24px; height: 24px; fill: #595959; }
 
-/* --- RESPONSIVE LÊN-XUỐNG (TABLET & MOBILE) --- */
-@media (max-width: 768px) {
-    .auth-container { min-height: 800px; width: 100vw; height: 100vh; border-radius: 0; }
-    .form-container { width: 100%; }
-    
+
+/* ==================================== */
+/* BỐ CỤC DESKTOP (>= 1025px) */
+/* ==================================== */
+@media (min-width: 1025px) {
+    .sign-in-container { left: 0; width: 50%; z-index: 2; }
+    .sign-up-container { left: 0; width: 50%; opacity: 0; z-index: 1; }
     .overlay-container {
-        top: 50%; left: 0;
-        width: 100%; height: 50%;
-        /* Bo tròn trên */
-        border-radius: 250px 250px 0 0;
+        position: absolute; top: 0; left: 50%; width: 50%; height: 100%; overflow: hidden;
+        transition: transform 0.6s ease-in-out, border-radius 0.6s ease-in-out; z-index: 100;
+        
+        border-top-left-radius: 250px;
+        border-bottom-left-radius: 250px;
     }
-
-    .overlay { left: 0; width: 100%; height: 200%; transform: translateY(0); }
-    .overlay-panel { width: 100%; height: 50%; }
-    .overlay-left { transform: translateY(-20%); }
-    .overlay-right { bottom: 0; transform: translateY(0); }
-
-    /* Hiệu ứng di chuyển dọc */
+    .overlay {
+        background: var(--color-dark); color: var(--color-primary); position: relative;
+        left: -100%; height: 100%; width: 200%; transform: translateX(0);
+        transition: transform 0.6s ease-in-out;
+    }
+    .overlay-panel {
+        position: absolute; display: flex; align-items: center; justify-content: center;
+        flex-direction: column; padding: 0 40px; text-align: center; top: 0;
+        height: 100%; width: 50%; transform: translateX(0); transition: transform 0.6s ease-in-out;
+    }
+    .overlay-left { transform: translateX(-20%); }
+    .overlay-right { right: 0; transform: translateX(0); }
+    .auth-container.right-panel-active .sign-in-container { transform: translateX(100%); }
+    .auth-container.right-panel-active .sign-up-container { transform: translateX(100%); opacity: 1; z-index: 5; animation: show 0.6s; }
     .auth-container.right-panel-active .overlay-container {
-        transform: translateY(-100%);
-        /* Đổi bo tròn khi di chuyển lên trên */
-        border-radius: 0 0 250px 250px;
+        transform: translateX(-100%); border-radius: 0;
+        
+        border-top-right-radius: 250px;
+        border-bottom-right-radius: 250px;
     }
+    .auth-container.right-panel-active .overlay { transform: translateX(50%); }
+    @keyframes show { 0%, 49.99% { opacity: 0; z-index: 1; } 50%, 100% { opacity: 1; z-index: 5; } }
+}
+
+/* ======================================================= */
+/* BỐ CỤC TABLET & MOBILE (<= 1024px) */
+/* ======================================================= */
+@media (max-width: 1024px) {
+    .auth-container { width: 100vw; height: 100vh; min-height: 0; border-radius: 0; box-shadow: none; }
+    .overlay-container { display: none; }
+    .form-container {
+        width: 100%; height: 100%; left: 0; top: 0;
+        transition: opacity 0.3s ease-in-out, z-index 0.3s steps(1, end);
+    }
+    form { padding: 0 10%; }
     
-    .auth-container.right-panel-active .sign-in-container { transform: translateY(100%); }
-    .auth-container.right-panel-active .sign-up-container { transform: translateY(100%); }
-    .auth-container.right-panel-active .overlay { transform: translateY(50%); }
-    .auth-container.right-panel-active .overlay-left { transform: translateY(0); }
-    .auth-container.right-panel-active .overlay-right { transform: translateY(20%); }
+    .sign-in-container { opacity: 1; z-index: 2; }
+    .sign-up-container { opacity: 0; z-index: 1; }
+    
+    .auth-container.right-panel-active .sign-in-container { opacity: 0; z-index: 1; }
+    .auth-container.right-panel-active .sign-up-container { opacity: 1; z-index: 2; }
+
+    .mobile-switch {
+        display: block; margin-top: 25px; font-size: 16px;
+        font-weight: 700; color: #595959;
+    }
+    .mobile-switch a {
+        color: var(--color-dark); text-decoration: underline;
+    }
 }

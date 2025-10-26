@@ -1,13 +1,9 @@
 :root {
-    /* Colors */
     --color-primary: #E9C664;
-    --color-secondary: #BE9359;
     --color-dark: #212121;
     --color-white: white;
     --color-gray: #979799;
     --color-black: black;
-
-    /* Fonts */
     --font-heading: 'Abril Fatface', serif;
     --font-accent: 'Bebas Neue', sans-serif;
     --font-body: 'Inter', sans-serif;
