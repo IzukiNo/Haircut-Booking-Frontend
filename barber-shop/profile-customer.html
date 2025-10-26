@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BARBERSHOP - Customer Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/pages/profile.css"> 
+</head>
+<body class="profile-page">
+    <main class="profile-container">
+        <aside class="profile-sidebar">
+            <div class="avatar-container">
+                </div>
+            <div class="user-info">
+                <h2 class="user-name">Nguyễn Văn B</h2>
+                <p class="user-email">customer@example.com</p>
+            </div>
+            <div class="role-badge">
+                <span class="dot"></span>
+                Khách
+            </div>
+            <div class="profile-actions-card">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <p class="stat-number">5</p>
+                        <p class="stat-label">Điểm tích lũy</p>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn btn-dark">Chỉnh sửa hồ sơ</button>
+                    <button class="btn btn-outline">Đổi mật khẩu</button>
+                    <button class="btn btn-outline">Đăng xuất</button>
+                    <button class="btn btn-outline">Cài đặt</button>
+                </div>
+            </div>
+        </aside>
+
+        <section class="profile-content">
+            <header class="content-header">
+                <h3>Chi tiết hồ sơ</h3>
+            </header>
+            
+            <div class="content-body">
+                <nav class="content-tabs">
+                    <a href="#" class="tab-item is-active" data-target="info">Thông tin</a>
+                    <a href="#" class="tab-item" data-target="history">Lịch sử hẹn</a>
+                    <a href="#" class="tab-item" data-target="portfolio">Tệp & Hình mẫu</a>
+                </nav>
+
+                <div class="tab-pane is-active" id="info">
+                    <form class="profile-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fullname">Họ và tên</label>
+                                <input type="text" id="fullname" value="Nguyễn Văn B">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" value="customer@example.com" readonly>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Số điện thoại</label>
+                                <input type="tel" id="phone" value="+84 900 111 222">
+                            </div>
+                            <div class="form-group">
+                                <label for="role">Vai trò</label>
+                                <input type="text" id="role" value="Khách" readonly>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                             <div class="form-group full-width">
+                                <label for="preferences">Sở thích kiểu tóc</label>
+                                <input type="text" id="preferences" value="Undercut, Side Part">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="tab-pane" id="history">
+                    <p>Đây là nơi hiển thị lịch sử các lần đặt hẹn đã hoàn thành của bạn.</p>
+                </div>
+                
+                <div class="tab-pane" id="portfolio">
+                    <p>Đây là nơi bạn có thể lưu lại những kiểu tóc yêu thích để tham khảo cho lần cắt tiếp theo.</p>
+                </div>
+                
+                <footer class="content-footer">
+                    <button class="btn btn-outline">Hoàn tác</button>
+                    <button class="btn btn-dark">Lưu thay đổi</button>
+                </footer>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="js/profile.js"></script>
+</body>
+</html>
