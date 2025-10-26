@@ -1,54 +1,132 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Barbershop - Dashboard - Appointments</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/reset.css"><link rel="stylesheet" href="css/variables.css"><link rel="stylesheet" href="css/pages/dashboard.css"> 
-</head>
-<body class="dashboard-page">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/pages/dashboard.css" />
+  </head>
+  <body class="dashboard-page">
     <div class="dashboard-layout">
-        <aside class="dashboard-sidebar">
-            <div class="sidebar-header"><a href="index.html" class="logo">BARBERSHOP</a></div>
-            <nav class="sidebar-nav">
-                <ul>
-                    <li><a href="dashboard.html" class="nav-item"><span>🏠</span> <span class="nav-text">Tổng quan</span></a></li>
-                    <li><a href="dashboard-users.html" class="nav-item"><span>👤</span> <span class="nav-text">Người dùng</span></a></li>
-                    <li><a href="dashboard-appointments.html" class="nav-item is-active"><span>📅</span> <span class="nav-text">Lịch hẹn</span></a></li>
-                    <li><a href="dashboard-services.html" class="nav-item"><span>✂️</span> <span class="nav-text">Dịch vụ</span></a></li>
-                </ul>
-            </nav>
-        </aside>
-        <div class="main-wrapper">
-            <header class="dashboard-header">
-                <button class="sidebar-toggle" id="sidebar-toggle">☰</button>
-                <div class="search-bar"><input type="text" placeholder="Tìm kiếm..."></div>
-            </header>
-            <main class="dashboard-main">
-                <div class="main-header-controls">
-                    <h1 class="main-title">Quản lý lịch hẹn</h1>
-                    <div class="filter-buttons">
-                        <button class="filter-btn is-active">Tất cả</button>
-                        <button class="filter-btn">Chờ duyệt</button>
-                        <button class="filter-btn">Đã xác nhận</button>
-                        <button class="filter-btn">Hoàn tất</button>
-                        <button class="filter-btn">Đã hủy</button>
-                        <button class="btn-add-new">+ Thêm lịch</button>
-                    </div>
-                </div>
-                <div class="card table-card full-width">
-                    <table class="data-table">
-                        <thead><tr><th>Khách</th><th>Dịch vụ</th><th>Thời gian</th><th>Trạng thái</th><th>Hành động</th></tr></thead>
-                        <tbody>
-                            <tr><td>Pham Minh</td><td>Haircut</td><td>09:00 09/10</td><td><span class="status status--confirmed">Đã xác nhận</span></td><td><div class="table-actions"><a href="#" class="btn-action">Sửa</a><a href="#" class="btn-action btn-delete">Xóa</a></div></td></tr>
-                            <tr><td>Nguyen Van A</td><td>Trimming</td><td>10:30 09/10</td><td><span class="status status--pending">Chờ duyệt</span></td><td><div class="table-actions"><a href="#" class="btn-action">Sửa</a><a href="#" class="btn-action btn-delete">Xóa</a></div></td></tr>
-                            <tr><td>Le Huy</td><td>Shaving</td><td>13:00 09/10</td><td><span class="status status--completed">Hoàn tất</span></td><td><div class="table-actions"><a href="#" class="btn-action">Sửa</a><a href="#" class="btn-action btn-delete">Xóa</a></div></td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </main>
+      <aside class="dashboard-sidebar">
+        <div class="sidebar-header">
+          <a href="index.html" class="logo">BARBERSHOP</a>
         </div>
+        <nav class="sidebar-nav">
+          <ul>
+            <li>
+              <a href="dashboard.html" class="nav-item"
+                ><span>🏠</span> <span class="nav-text">Tổng quan</span></a
+              >
+            </li>
+            <li>
+              <a href="dashboard-users.html" class="nav-item"
+                ><span>👤</span> <span class="nav-text">Người dùng</span></a
+              >
+            </li>
+            <li>
+              <a href="dashboard-appointments.html" class="nav-item is-active"
+                ><span>📅</span> <span class="nav-text">Lịch hẹn</span></a
+              >
+            </li>
+            <li>
+              <a href="dashboard-services.html" class="nav-item"
+                ><span>✂️</span> <span class="nav-text">Dịch vụ</span></a
+              >
+            </li>
+            <li>
+              <a href="dashboard-settings.html" class="nav-item"
+                ><span>⚙️</span> <span class="nav-text">Cài đặt</span></a
+              >
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <div class="main-wrapper">
+        <header class="dashboard-header">
+          <button class="sidebar-toggle" id="sidebar-toggle">☰</button>
+          <div class="search-bar">
+            <div class="input-wrapper">
+              <input type="text" placeholder="Tìm kiếm..." />
+            </div>
+          </div>
+        </header>
+        <main class="dashboard-main">
+          <div class="main-header-controls">
+            <h1 class="main-title">Quản lý lịch hẹn</h1>
+            <div class="filter-buttons">
+              <button class="filter-btn is-active">Tất cả</button>
+              <button class="filter-btn">Chờ duyệt</button>
+              <button class="filter-btn">Đã xác nhận</button>
+              <button class="filter-btn">Hoàn tất</button>
+              <button class="filter-btn">Đã hủy</button>
+              <button class="btn-add-new">+ Thêm lịch</button>
+            </div>
+          </div>
+          <div class="card table-card full-width">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Khách</th>
+                  <th>Dịch vụ</th>
+                  <th>Thời gian</th>
+                  <th>Trạng thái</th>
+                  <th>Hành động</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Pham Minh</td>
+                  <td>Haircut</td>
+                  <td>09:00 09/10</td>
+                  <td>
+                    <span class="status status--confirmed">Đã xác nhận</span>
+                  </td>
+                  <td>
+                    <div class="table-actions">
+                      <a href="#" class="btn-action">Sửa</a
+                      ><a href="#" class="btn-action btn-delete">Xóa</a>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Nguyen Van A</td>
+                  <td>Trimming</td>
+                  <td>10:30 09/10</td>
+                  <td><span class="status status--pending">Chờ duyệt</span></td>
+                  <td>
+                    <div class="table-actions">
+                      <a href="#" class="btn-action">Sửa</a
+                      ><a href="#" class="btn-action btn-delete">Xóa</a>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Le Huy</td>
+                  <td>Shaving</td>
+                  <td>13:00 09/10</td>
+                  <td>
+                    <span class="status status--completed">Hoàn tất</span>
+                  </td>
+                  <td>
+                    <div class="table-actions">
+                      <a href="#" class="btn-action">Sửa</a
+                      ><a href="#" class="btn-action btn-delete">Xóa</a>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </main>
+      </div>
     </div>
     <script src="js/dashboard.js"></script>
-</body>
+  </body>
 </html>

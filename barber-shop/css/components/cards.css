@@ -1,32 +1,99 @@
 /* Service Cards */
-.service-card, .service-card-full {
-    outline: 2px solid var(--color-primary);
-    outline-offset: -2px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
-    text-align: center;
-    color: var(--color-white);
+.service-card,
+.service-card-full {
+  border: 2px solid var(--color-primary);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  text-align: center;
+  color: var(--color-white);
 }
 
 /* Home Preview Cards */
 .service-card {
-    width: 337px;
-    height: 337px;
-    padding: 50px;
+  width: 337px;
+  height: 337px;
+  padding: 50px;
 }
 
 /* Services Page Cards */
 .service-card-full {
-    width: 416px;
-    height: 359px;
-    padding: 50px;
+  width: 416px;
+  height: 359px;
+  padding: 50px;
 }
 
 .card-title {
+  font-size: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.card-description {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-gray);
+}
+
+.card-icon {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  border: none;
+}
+
+.card-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: brightness(0) saturate(100%) invert(85%) sepia(47%) saturate(4347%)
+    hue-rotate(359deg) brightness(98%) contrast(106%);
+  /* Filter để tạo màu primary (#E8B86D) */
+}
+
+/* Responsive Design for Cards */
+@media (max-width: 768px) {
+  .service-card {
+    width: 280px;
+    height: 300px;
+    padding: 30px 20px;
+  }
+
+  .service-card-full {
+    width: 320px;
+    height: 320px;
+    padding: 30px 20px;
+  }
+
+  .card-title {
+    font-size: 18px;
+    letter-spacing: 0.5px;
+  }
+
+  .card-description {
+    font-size: 13px;
+  }
+
+  .card-icon {
+    width: 50px;
+    height: 50px;
     font-size: 20px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-card,
+  .service-card-full {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    min-height: 280px;
+    padding: 25px 15px;
+  }
 }

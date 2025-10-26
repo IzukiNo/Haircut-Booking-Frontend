@@ -1,70 +1,125 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BARBERSHOP - Barber Profile</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/pages/profile.css"> 
-</head>
-<body class="profile-page">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/pages/profile.css" />
+  </head>
+  <body class="profile-page">
     <main class="profile-container">
-        <aside class="profile-sidebar">
-            <div class="avatar-container"></div>
-            <div class="user-info">
-                <h2 class="user-name">Nguyễn Văn A</h2>
-                <p class="user-email">barber@example.com</p>
+      <aside class="profile-sidebar">
+        <div class="avatar-container"></div>
+        <div class="user-info">
+          <h2 class="user-name">Nguyễn Văn A</h2>
+          <p class="user-email">barber@example.com</p>
+        </div>
+        <div class="role-badge"><span class="dot"></span>Thợ cắt tóc</div>
+        <div class="profile-actions-card">
+          <div class="stats-grid">
+            <div class="stat-item">
+              <p class="stat-number">128</p>
+              <p class="stat-label">Khách phục vụ</p>
             </div>
-            <div class="role-badge"><span class="dot"></span>Thợ cắt tóc</div>
-            <div class="profile-actions-card">
-                <div class="stats-grid">
-                    <div class="stat-item"><p class="stat-number">128</p><p class="stat-label">Khách phục vụ</p></div>
-                    <div class="stat-item"><p class="stat-number">4.9</p><p class="stat-label">Đánh giá</p></div>
-                </div>
-                <div class="action-buttons">
-                    <button class="btn btn-dark">Chỉnh sửa hồ sơ</button>
-                    <button class="btn btn-outline">Đổi mật khẩu</button>
-                    <button class="btn btn-outline">Đăng xuất</button>
-                    <button class="btn btn-outline">Cài đặt</button>
-                </div>
+            <div class="stat-item">
+              <p class="stat-number">4.9</p>
+              <p class="stat-label">Đánh giá</p>
             </div>
-        </aside>
+          </div>
+          <div class="action-buttons">
+            <button class="btn btn-dark">Chỉnh sửa hồ sơ</button>
+            <button class="btn btn-outline">Đổi mật khẩu</button>
+            <button class="btn btn-outline">Đăng xuất</button>
+            <button class="btn btn-outline">Cài đặt</button>
+          </div>
+        </div>
+      </aside>
 
-        <section class="profile-content">
-            <header class="content-header"><h3>Chi tiết hồ sơ</h3></header>
-            <div class="content-body">
-                <nav class="content-tabs">
-                    <a href="#" class="tab-item is-active" data-target="info">Thông tin</a>
-                    <a href="#" class="tab-item" data-target="schedule">Lịch hẹn</a>
-                    <a href="#" class="tab-item" data-target="portfolio">Tệp & Hình mẫu</a>
-                </nav>
+      <section class="profile-content">
+        <header class="content-header"><h3>Chi tiết hồ sơ</h3></header>
+        <div class="content-body">
+          <nav class="content-tabs">
+            <a href="#" class="tab-item is-active" data-target="info"
+              >Thông tin</a
+            >
+            <a href="#" class="tab-item" data-target="schedule">Lịch hẹn</a>
+            <a href="#" class="tab-item" data-target="portfolio"
+              >Tệp & Hình mẫu</a
+            >
+          </nav>
 
-                <div class="tab-pane is-active" id="info">
-                    <form class="profile-form">
-                        <div class="form-row"><div class="form-group"><label for="fullname">Họ và tên</label><input type="text" id="fullname" value="Nguyễn Văn A"></div><div class="form-group"><label for="email">Email</label><input type="email" id="email" value="barber@example.com" readonly></div></div>
-                        <div class="form-row"><div class="form-group"><label for="phone">Số điện thoại</label><input type="tel" id="phone" value="+84 380 000 000"></div><div class="form-group"><label for="role">Vai trò</label><input type="text" id="role" value="Thợ" readonly></div></div>
-                        <div class="form-row"><div class="form-group full-width"><label for="skills">Chuyên môn</label><input type="text" id="skills" value="Fade, Taper, Pompadour"></div></div>
-                        <div class="form-row"><div class="form-group full-width"><label for="description">Mô tả</label><textarea id="description" rows="3">Đam mê cắt tóc và tạo kiểu cá nhân hoá cho khách.</textarea></div></div>
-                    </form>
+          <div class="tab-pane is-active" id="info">
+            <form class="profile-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="fullname">Họ và tên</label
+                  ><input type="text" id="fullname" value="Nguyễn Văn A" />
                 </div>
-                
-                <div class="tab-pane" id="schedule">
-                    <p>Đây là nơi hiển thị lịch hẹn sắp tới của thợ cắt tóc.</p>
+                <div class="form-group">
+                  <label for="email">Email</label
+                  ><input
+                    type="email"
+                    id="email"
+                    value="barber@example.com"
+                    readonly
+                  />
                 </div>
-
-                <div class="tab-pane" id="portfolio">
-                    <p>Đây là nơi thợ cắt tóc có thể tải lên và quản lý các kiểu tóc đã thực hiện.</p>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="phone">Số điện thoại</label
+                  ><input type="tel" id="phone" value="+84 380 000 000" />
                 </div>
+                <div class="form-group">
+                  <label for="role">Vai trò</label
+                  ><input type="text" id="role" value="Thợ" readonly />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group full-width">
+                  <label for="skills">Chuyên môn</label
+                  ><input
+                    type="text"
+                    id="skills"
+                    value="Fade, Taper, Pompadour"
+                  />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group full-width">
+                  <label for="description">Mô tả</label
+                  ><textarea id="description" rows="3">
+Đam mê cắt tóc và tạo kiểu cá nhân hoá cho khách.</textarea
+                  >
+                </div>
+              </div>
+            </form>
+          </div>
 
-                <footer class="content-footer">
-                    <button class="btn btn-outline">Hoàn tác</button>
-                    <button class="btn btn-dark">Lưu thay đổi</button>
-                </footer>
-            </div>
-        </section>
+          <div class="tab-pane" id="schedule">
+            <p>Đây là nơi hiển thị lịch hẹn sắp tới của thợ cắt tóc.</p>
+          </div>
+
+          <div class="tab-pane" id="portfolio">
+            <p>
+              Đây là nơi thợ cắt tóc có thể tải lên và quản lý các kiểu tóc đã
+              thực hiện.
+            </p>
+          </div>
+
+          <footer class="content-footer">
+            <button class="btn btn-outline">Hoàn tác</button>
+            <button class="btn btn-dark">Lưu thay đổi</button>
+          </footer>
+        </div>
+      </section>
     </main>
     <script src="js/profile.js"></script>
-</body>
+  </body>
 </html>

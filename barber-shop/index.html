@@ -1,51 +1,116 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BARBERSHOP - Home</title>
-    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bebas+Neue&family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/components/navigation.css">
-    <link rel="stylesheet" href="css/components/hero.css">
-    <link rel="stylesheet" href="css/components/cards.css">
-    <link rel="stylesheet" href="css/components/counter.css">
-    <link rel="stylesheet" href="css/components/banner.css"><link rel="stylesheet" href="css/components/testimonials.css">
-    <link rel="stylesheet" href="css/components/footer.css"><link rel="stylesheet" href="css/pages/home.css">
-</head>
-<body class="homepage">
-    <div data-component="header"></div><div data-component="mobile-nav"></div> 
-    <header class="hero-content-area hero-home" style="background-image: url('https://placehold.co/1440x942');">
-        <div class="hero-content">
-            <h1 class="hero-title">BARBERSHOP</h1>
-            <div class="hero-est"><span class="est-text">est.</span><span class="est-year">2025</span></div>
-            <p class="hero-subtitle">shaves & trims</p>
-        </div>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components/navigation.css" />
+    <link rel="stylesheet" href="css/components/hero.css" />
+    <link rel="stylesheet" href="css/components/cards.css" />
+    <link rel="stylesheet" href="css/components/counter.css" />
+    <link rel="stylesheet" href="css/components/banner.css" />
+    <link rel="stylesheet" href="css/components/testimonials.css" />
+    <link rel="stylesheet" href="css/components/footer.css" />
+    <link rel="stylesheet" href="css/pages/home.css" />
+  </head>
+  <body class="homepage">
+    <div data-component="header"></div>
+    <div data-component="mobile-nav"></div>
+    <header
+      class="hero-content-area hero-home"
+      style="
+        background-image: url('https://cdn.jsdelivr.net/gh/IzukiNo/Images-CDN/assets/landing-hero.jpg');
+      "
+    >
+      <div class="hero-content">
+        <img
+          src="assets/hero-logo.svg"
+          alt="Barbershop Logo"
+          class="hero-logo"
+        />
+      </div>
     </header>
     <section class="services-section-preview">
-        <img src="https://placehold.co/1645x1374" alt="Background services" class="services-bg-img">
-        <div class="services-overlay">
-            <div class="section-header"><p class="pre-title">OUR TREATMENT</p><h2 class="section-title">SERVICES</h2></div>
-            <div class="service-cards-container">
-                <div class="service-card"><div class="card-icon"></div><h3 class="card-title">HAIRCUT & BEARD TRIM</h3><p class="card-description">✂️ Professional haircut combined with precise beard trimming for a sharp, masculine look.</p></div>
-                <div class="service-card"><div class="card-icon"></div><h3 class="card-title">SHAVES & HAIRCUT</h3><p class="card-description">💈 Classic barber service with a clean shave and fresh haircut.</p></div>
-                <div class="service-card"><div class="card-icon"></div><h3 class="card-title">FACIAL & SHAVE</h3><p class="card-description">🌿 Rejuvenating facial treatment combined with a clean, refreshing shave.</p></div>
-                <div class="service-card"><div class="card-icon"></div><h3 class="card-title">THE BIG DAY</h3><p class="card-description">🎩 Look your absolute best on the most important day of your life.</p></div>
-            </div>
-            <a href="services.html" class="btn btn-primary explore-btn">EXPLORE NOW</a>
+      <img
+        src="https://cdn.jsdelivr.net/gh/IzukiNo/Images-CDN/assets/landing-services.png"
+        alt="Background services"
+        class="services-bg-img"
+      />
+      <div class="services-overlay">
+        <div class="section-header">
+          <p class="pre-title">OUR TREATMENT</p>
+          <h2 class="section-title">SERVICES</h2>
         </div>
+        <div class="service-cards-container">
+          <div class="service-card">
+            <div class="card-icon">
+              <img src="assets/scissors2.svg" alt="Haircut & Beard Trim" />
+            </div>
+            <h3 class="card-title">HAIRCUT & BEARD TRIM</h3>
+            <p class="card-description">
+              ✂️ Professional haircut combined with precise beard trimming for a
+              sharp, masculine look.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="card-icon">
+              <img src="assets/scissors3.svg" alt="Shaves & Haircut" />
+            </div>
+            <h3 class="card-title">SHAVES & HAIRCUT</h3>
+            <p class="card-description">
+              💈 Classic barber service with a clean shave and fresh haircut.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="card-icon">
+              <img src="assets/beard.svg" alt="Facial & Shave" />
+            </div>
+            <h3 class="card-title">FACIAL & SHAVE</h3>
+            <p class="card-description">
+              🌿 Rejuvenating facial treatment combined with a clean, refreshing
+              shave.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="card-icon">
+              <img src="assets/mustache.svg" alt="The Big Day" />
+            </div>
+            <h3 class="card-title">THE BIG DAY</h3>
+            <p class="card-description">
+              🎩 Look your absolute best on the most important day of your life.
+            </p>
+          </div>
+        </div>
+        <a href="services.html" class="btn btn-primary explore-btn"
+          >EXPLORE NOW</a
+        >
+      </div>
     </section>
     <section class="counter-section">
-        <div class="container counter-grid">
-            <div class="counter-item"><div class="counter-icon"></div><p class="count-number">2500</p><p class="count-label">SHAVES</p></div>
-            <div class="counter-item"><div class="counter-icon"></div><p class="count-number">4500</p><p class="count-label">HAIRCUTS</p></div>
-            <div class="counter-item"><div class="counter-icon"></div><p class="count-number">9</p><p class="count-label">OPEN SHOPS</p></div>
+      <div class="container counter-grid">
+        <div class="counter-item">
+          <div class="counter-icon"></div>
+          <p class="count-number">2500</p>
+          <p class="count-label">SHAVES</p>
         </div>
+        <div class="counter-item">
+          <div class="counter-icon"></div>
+          <p class="count-number">4500</p>
+          <p class="count-label">HAIRCUTS</p>
+        </div>
+        <div class="counter-item">
+          <div class="counter-icon"></div>
+          <p class="count-number">9</p>
+          <p class="count-label">OPEN SHOPS</p>
+        </div>
+      </div>
     </section>
-    <div data-component="promo-banner"></div> 
-    <div data-component="testimonials"></div> 
-    <div data-component="footer"></div> 
+    <div data-component="promo-banner"></div>
+    <div data-component="testimonials"></div>
+    <div data-component="footer"></div>
     <script src="js/main.js" defer></script>
-</body>
+  </body>
 </html>

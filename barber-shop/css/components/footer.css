@@ -1,73 +1,125 @@
-
 .footer-section {
-    padding: 60px 0;
-    background-color: var(--color-white);
-    color: var(--color-black);
-    text-align: center;
+  padding: 60px 0;
+  background-color: var(--color-white);
+  color: var(--color-black);
+  text-align: center;
 }
 
 .footer-section .section-header {
-    gap: 25px;
-    margin-bottom: 80px;
+  gap: 25px;
+  margin-bottom: 80px;
 }
 
 .footer-quote {
-    font-size: 16px;
-    max-width: 600px; /* Thêm giới hạn chiều rộng để câu quote không quá dài */
-    margin: 0 auto; /* Căn giữa câu quote */
+  font-size: 16px;
+  max-width: 600px; /* Thêm giới hạn chiều rộng để câu quote không quá dài */
+  margin: 0 auto; /* Căn giữa câu quote */
 }
 
 .contact-info-grid {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Căn các item theo đỉnh */
-    flex-wrap: wrap; /* Cho phép xuống hàng nếu cần */
-    gap: 75px;
-    margin-bottom: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Căn các item theo đỉnh */
+  flex-wrap: wrap; /* Cho phép xuống hàng nếu cần */
+  gap: 75px;
+  margin-bottom: 80px;
 }
 
 .contact-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    min-width: 150px; /* Đặt chiều rộng tối thiểu để tránh bị co lại quá mức */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  min-width: 150px; /* Đặt chiều rộng tối thiểu để tránh bị co lại quá mức */
+}
+
+.contact-icon {
+  width: 60px;
+  height: 60px;
+  border: 2px solid var(--color-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  transition: all 0.3s ease;
+}
+
+.contact-icon:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  transform: translateY(-3px);
+}
+
+/* Ensure footer icons are always visible */
+.contact-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
 }
 
 .contact-title {
-    font-size: 20px;
-    letter-spacing: 1px;
-    color: var(--color-black);
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: var(--color-black);
+  margin-bottom: 8px;
+}
+
+.contact-detail {
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--color-gray);
 }
 
 .working-hours {
-    font-size: 17px;
-    line-height: 1.5; /* Cải thiện khoảng cách dòng */
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--color-gray);
 }
 
 .divider {
-    width: 100%;
-    height: 1px;
-    background-color: #ddd; /* Làm màu nhạt hơn một chút */
-    margin-bottom: 35px;
+  width: 100%;
+  height: 1px;
+  background-color: #ddd; /* Làm màu nhạt hơn một chút */
+  margin-bottom: 35px;
 }
 
 .copyright {
-    font-size: 17px;
-    color: var(--color-gray);
+  font-size: 17px;
+  color: var(--color-gray);
 }
-
 
 /* --- RESPONSIVE (MÃ MỚI) --- */
 @media (max-width: 768px) {
-    .contact-info-grid {
-        flex-direction: column; /* Chuyển sang layout cột */
-        align-items: center;    /* Căn giữa các item trong cột */
-        gap: 40px;              /* Giảm khoảng cách khi xếp dọc */
-        margin-bottom: 60px;
-    }
-    
-    .footer-section .section-header {
-        margin-bottom: 60px;
-    }
+  .contact-info-grid {
+    flex-direction: column; /* Chuyển sang layout cột */
+    align-items: center; /* Căn giữa các item trong cột */
+    gap: 40px; /* Giảm khoảng cách khi xếp dọc */
+    margin-bottom: 60px;
+  }
+
+  .footer-section .section-header {
+    margin-bottom: 60px;
+  }
+
+  .contact-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .contact-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .contact-title {
+    font-size: 18px;
+  }
+
+  .contact-detail,
+  .working-hours {
+    font-size: 14px;
+  }
 }

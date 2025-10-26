@@ -2,59 +2,63 @@
 
 /* Banner Section Container (phần này giúp component banner tách biệt) */
 .banner-section {
-    width: 100%;
-    padding: 60px 0;
-    /* Mặc định màu nền tối cho Home/About */
-    background-color: var(--color-dark); 
+  width: 100%;
+  padding: 60px 0;
+  /* Mặc định màu nền tối cho Home/About */
+  background-color: var(--color-dark);
 }
 
 /* Home/About Banner Wrapper - Layout Mặc Định */
 .discount-banner-wrapper {
-    background-color: var(--color-primary);
-    height: 407px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 60px;
-    padding: 0 140px;
-    margin: 0 auto; /* Căn giữa trong container */
-    max-width: 1440px;
+  background-color: var(--color-primary);
+  height: 407px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  padding: 0 140px;
+  margin: 0 auto; /* Căn giữa trong container */
+  max-width: 1440px;
 }
 
 .discount-text-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 35px;
-    color: var(--color-black);
-    max-width: 577px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 35px;
+  color: var(--color-black);
+  max-width: 577px;
 }
 
 .discount-title {
-    font-size: 70px;
-    letter-spacing: 3.5px;
-    color: var(--color-black);
+  font-size: 70px;
+  letter-spacing: 3.5px;
+  color: var(--color-black);
 }
 
 .discount-description {
-    font-size: 16px;
-    color: var(--color-black);
+  font-size: 16px;
+  color: var(--color-black);
 }
 
 .discount-image-box {
-    position: relative;
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 500px; /* Giới hạn width để không quá lớn */
 }
 
 .discount-img {
-    width: 562px;
-    height: 528px;
-    object-fit: cover;
-    filter: drop-shadow(35px 35px 35px rgba(0, 0, 0, 0.5));
-    position: relative;
-    bottom: -121px; /* Tạo hiệu ứng nhô lên */
+  width: 100%;
+  height: auto; /* Để hình giữ tỷ lệ gốc */
+  max-height: 407px; /* Giới hạn chiều cao tối đa */
+  object-fit: contain; /* Hiển thị toàn bộ hình mà không crop */
+  border-radius: 8px;
+  filter: drop-shadow(15px 15px 25px rgba(0, 0, 0, 0.3));
 }
-
 
 /* ==================================== */
 /* OVERRIDES CHO CÁC VỊ TRÍ KHÁC */
@@ -62,43 +66,47 @@
 
 /* Override cho Banner nằm trong Prices Section (Trang Services) */
 .services-page .prices-section .banner-section {
-    background-color: transparent; /* Xóa màu nền trùng lặp */
-    padding: 0; /* Xóa padding vì nó nằm trong prices-content-wrapper */
+  background-color: transparent; /* Xóa màu nền trùng lặp */
+  padding: 0; /* Xóa padding vì nó nằm trong prices-content-wrapper */
 }
 
 /* Override cho Banner nằm trong Contact Section (Trang Contact) */
 .contact-page .contact-banner-section .banner-section {
-    background-color: var(--color-white); /* Banner nằm trên nền trắng */
+  background-color: var(--color-white); /* Banner nằm trên nền trắng */
 }
 .contact-page .contact-banner-section .discount-banner-wrapper {
-    /* Điều chỉnh kích thước/padding nếu cần cho layout Contact */
-    padding: 60px 72px; 
-    height: auto;
+  /* Điều chỉnh kích thước/padding nếu cần cho layout Contact */
+  padding: 60px 72px;
+  height: auto;
 }
 
 /* Responsive Overrides */
 @media (max-width: 768px) {
-    .discount-banner-wrapper {
-        flex-direction: column;
-        height: auto;
-        padding: 40px 20px;
-        text-align: center;
-    }
+  .discount-banner-wrapper {
+    flex-direction: column;
+    height: auto;
+    padding: 40px 20px;
+    text-align: center;
+  }
 
-    .discount-text-box {
-        align-items: center;
-    }
-    
-    .discount-title {
-        font-size: 50px;
-    }
+  .discount-text-box {
+    align-items: center;
+  }
 
-    .discount-img {
-        position: static;
-        width: 100%;
-        height: auto;
-        margin-top: 20px;
-        filter: none;
-        box-shadow: none;
-    }
+  .discount-title {
+    font-size: 50px;
+  }
+  .discount-image-box {
+    max-width: none; /* Remove width limit on mobile */
+  }
+
+  .discount-img {
+    position: static;
+    width: 100%;
+    height: auto;
+    max-height: none; /* Remove height limit on mobile */
+    margin-top: 20px;
+    filter: none;
+    box-shadow: none;
+  }
 }

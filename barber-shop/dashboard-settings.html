@@ -1,93 +1,138 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Barbershop - Dashboard - Settings</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/pages/dashboard.css"> 
-</head>
-<body class="dashboard-page">
-
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/pages/dashboard.css" />
+  </head>
+  <body class="dashboard-page">
     <div class="dashboard-layout">
-        <aside class="dashboard-sidebar">
-            <div class="sidebar-header">
-                <a href="index.html" class="logo">BARBERSHOP</a>
-            </div>
-            <nav class="sidebar-nav">
-                <ul>
-                    <li><a href="dashboard.html" class="nav-item"><span>🏠</span> <span class="nav-text">Tổng quan</span></a></li>
-                    <li><a href="dashboard-users.html" class="nav-item"><span>👤</span> <span class="nav-text">Người dùng</span></a></li>
-                    <li><a href="dashboard-appointments.html" class="nav-item"><span>📅</span> <span class="nav-text">Lịch hẹn</span></a></li>
-                    <li><a href="dashboard-services.html" class="nav-item"><span>✂️</span> <span class="nav-text">Dịch vụ</span></a></li>
-                    <li><a href="dashboard-settings.html" class="nav-item is-active"><span>⚙️</span> <span class="nav-text">Cài đặt</span></a></li>
-                </ul>
-            </nav>
-        </aside>
-
-        <div class="main-wrapper">
-            <header class="dashboard-header">
-                <button class="sidebar-toggle" id="sidebar-toggle">☰</button>
-                <div class="search-bar">
-                    <input type="text" placeholder="Tìm kiếm...">
-                </div>
-            </header>
-
-            <main class="dashboard-main">
-                <h1 class="main-title">Cài đặt Cửa hàng</h1>
-
-                <form class="settings-form">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>Thông tin cơ bản</h3>
-                        </div>
-                        <div class="card-body form-grid">
-                            <div class="form-group full-span">
-                                <label for="shop-logo">Logo / Ảnh đại diện</label>
-                                <div class="logo-upload">
-                                    <div class="logo-preview">
-                                        </div>
-                                    <input type="file" id="shop-logo" accept="image/*">
-                                    <label for="shop-logo" class="btn-upload">Tải ảnh lên</label>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="shop-name">Tên cửa hàng</label>
-                                <input type="text" id="shop-name" value="Barbershop">
-                            </div>
-                            <div class="form-group">
-                                <label for="shop-phone">Số điện thoại</label>
-                                <input type="tel" id="shop-phone" value="+84 123 456 789">
-                            </div>
-                            <div class="form-group full-span">
-                                <label for="shop-address">Địa chỉ</label>
-                                <input type="text" id="shop-address" value="123 Đường ABC, Quận 1, TP. Hồ Chí Minh">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>Lịch hoạt động</h3>
-                        </div>
-                        <div class="card-body">
-                            <div class="hours-grid">
-                                <div class="day-row"><label>Thứ Hai - Thứ Sáu</label><div class="time-inputs"><input type="time" value="10:00"><input type="time" value="18:00"></div></div>
-                                <div class="day-row"><label>Thứ Bảy - Chủ Nhật</label><div class="time-inputs"><input type="time" value="10:00"><input type="time" value="17:00"></div></div>
-                                </div>
-                        </div>
-                    </div>
-                </form>
-
-                <div class="form-actions">
-                    <button class="btn-save">Lưu thay đổi</button>
-                </div>
-            </main>
+      <aside class="dashboard-sidebar">
+        <div class="sidebar-header">
+          <a href="index.html" class="logo">BARBERSHOP</a>
         </div>
+        <nav class="sidebar-nav">
+          <ul>
+            <li>
+              <a href="dashboard.html" class="nav-item"
+                ><span>🏠</span> <span class="nav-text">Tổng quan</span></a
+              >
+            </li>
+            <li>
+              <a href="dashboard-users.html" class="nav-item"
+                ><span>👤</span> <span class="nav-text">Người dùng</span></a
+              >
+            </li>
+            <li>
+              <a href="dashboard-appointments.html" class="nav-item"
+                ><span>📅</span> <span class="nav-text">Lịch hẹn</span></a
+              >
+            </li>
+            <li>
+              <a href="dashboard-services.html" class="nav-item"
+                ><span>✂️</span> <span class="nav-text">Dịch vụ</span></a
+              >
+            </li>
+            <li>
+              <a href="dashboard-settings.html" class="nav-item is-active"
+                ><span>⚙️</span> <span class="nav-text">Cài đặt</span></a
+              >
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <div class="main-wrapper">
+        <header class="dashboard-header">
+          <button class="sidebar-toggle" id="sidebar-toggle">☰</button>
+          <div class="search-bar">
+            <div class="input-wrapper">
+              <input type="text" placeholder="Tìm kiếm..." />
+            </div>
+          </div>
+        </header>
+
+        <main class="dashboard-main">
+          <h1 class="main-title">Cài đặt Cửa hàng</h1>
+
+          <form class="settings-form">
+            <div class="card">
+              <div class="card-header">
+                <h3>Thông tin cơ bản</h3>
+              </div>
+              <div class="card-body form-grid">
+                <div class="form-group full-span">
+                  <label for="shop-logo">Logo / Ảnh đại diện</label>
+                  <div class="logo-upload">
+                    <div class="logo-preview"></div>
+                    <input type="file" id="shop-logo" accept="image/*" />
+                    <label for="shop-logo" class="btn-upload"
+                      >Tải ảnh lên</label
+                    >
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="shop-name">Tên cửa hàng</label>
+                  <input type="text" id="shop-name" value="Barbershop" />
+                </div>
+                <div class="form-group">
+                  <label for="shop-phone">Số điện thoại</label>
+                  <input type="tel" id="shop-phone" value="+84 123 456 789" />
+                </div>
+                <div class="form-group full-span">
+                  <label for="shop-address">Địa chỉ</label>
+                  <input
+                    type="text"
+                    id="shop-address"
+                    value="123 Đường ABC, Quận 1, TP. Hồ Chí Minh"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <h3>Lịch hoạt động</h3>
+              </div>
+              <div class="card-body">
+                <div class="hours-grid">
+                  <div class="day-row">
+                    <label>Thứ Hai - Thứ Sáu</label>
+                    <div class="time-inputs">
+                      <input type="time" value="10:00" /><input
+                        type="time"
+                        value="18:00"
+                      />
+                    </div>
+                  </div>
+                  <div class="day-row">
+                    <label>Thứ Bảy - Chủ Nhật</label>
+                    <div class="time-inputs">
+                      <input type="time" value="10:00" /><input
+                        type="time"
+                        value="17:00"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+
+          <div class="form-actions">
+            <button class="btn-save">Lưu thay đổi</button>
+          </div>
+        </main>
+      </div>
     </div>
-    
+
     <script src="js/dashboard.js"></script>
-</body>
+  </body>
 </html>
