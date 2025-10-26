@@ -1,4 +1,5 @@
-/* General Form Styling */
+
+/* --- Form chung --- */
 .booking-form {
     width: 100%;
     padding: 40px;
@@ -6,6 +7,7 @@
     display: flex;
     flex-direction: column;
     gap: 28px;
+    border-radius: 8px; /* TĂNG CƯỜNG: Bo góc cho mềm mại */
 }
 
 .form-grid {
@@ -17,11 +19,11 @@
 .form-group {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 8px; /* Tăng gap một chút */
 }
 
 .form-group.full-width {
-    grid-column: 1 / -1; /* Span across both columns */
+    grid-column: 1 / -1;
 }
 
 .form-group label {
@@ -37,14 +39,32 @@
     height: 48px;
     padding: 0 16px;
     background: var(--color-white);
-    border: 1px solid #ccc;
+    border: 2px solid transparent; /* Đặt border trong suốt để không bị giật layout khi focus */
+    border-radius: 4px; /* TĂNG CƯỜNG: Bo góc cho ô nhập liệu */
     font-family: var(--font-body);
     font-size: 16px;
     color: var(--color-black);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* TĂNG CƯỜNG: Hiệu ứng chuyển động mượt */
+}
+
+/* TĂNG CƯỜNG: Style cho trạng thái focus */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(233, 198, 100, 0.3); /* Tạo hiệu ứng "glow" */
+}
+
+/* TĂNG CƯỜNG: Tùy chỉnh màu placeholder */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #999;
 }
 
 .form-group textarea {
     height: auto;
+    min-height: 120px; /* Đặt chiều cao tối thiểu */
     padding: 14px 16px;
     resize: vertical;
 }
@@ -52,12 +72,28 @@
 .btn.form-submit-btn {
     background-color: var(--color-primary);
     color: var(--color-black);
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 18px; /* Điều chỉnh lại một chút */
+    font-weight: 700; /* Dùng 700 cho đậm */
     text-transform: uppercase;
     height: auto;
     padding: 18px 40px;
     border: none;
     outline: none;
     cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* TĂNG CƯỜNG: Hiệu ứng hover cho nút */
+.btn.form-submit-btn:hover {
+    background-color: #ffde7a; /* Làm màu sáng hơn một chút */
+    transform: translateY(-2px);
+}
+
+
+/* --- RESPONSIVE (MÃ MỚI) --- */
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr; /* Chuyển thành 1 cột */
+    }
 }

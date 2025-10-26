@@ -1,36 +1,87 @@
-.hero {
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    width: 100%;
-}
-
-.hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.page-title {
-    font-size: 70px;
-    letter-spacing: 3.5px;
-    color: var(--color-white);
-    font-family: var(--font-heading);
-    text-transform: uppercase;
-    text-align: center;
-}
 
 .hero-content-area {
-    /* Đây là phần chứa ảnh nền lớn */
     background-size: cover;
     background-position: center;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center; /* Căn giữa nội dung theo chiều ngang */
+    align-items: center;     /* Căn giữa nội dung theo chiều dọc */
     position: relative;
     width: 100%;
-    /* Đảm bảo Hero bắt đầu ngay sau Nav bar */
-    /* Padding-top của hero-home sẽ được dùng để tạo khoảng cách */
+    color: var(--color-white);
+    text-align: center;
+    overflow: hidden; /* Đảm bảo overlay không bị tràn ra ngoài */
+}
+
+/* Lớp phủ tối màu để tăng độ tương phản cho chữ (MÃ MỚI) */
+.hero-content-area::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Màu đen với độ mờ 40% */
+    z-index: 1;
+}
+
+/* Nội dung phải nằm trên lớp phủ */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px; /* Thêm padding để nội dung không bị dính vào cạnh màn hình nhỏ */
+}
+
+/* --- CHIỀU CAO CỤ THỂ CHO TỪNG LOẠI HERO (MÃ MỚI) --- */
+.hero-home {
+    min-height: 942px; /* Chiều cao lớn cho trang chủ */
+}
+
+.hero-about,
+.hero-services,
+.hero-contact {
+    min-height: 381px; /* Chiều cao thấp hơn cho các trang con */
+}
+
+/* --- TIÊU ĐỀ CHÍNH --- */
+.page-title, .hero-title {
+    font-size: 70px;
+    letter-spacing: 3.5px;
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+}
+
+/* Các thành phần riêng của Hero Home */
+.hero-est {
+    font-family: var(--font-accent);
+    font-size: 30px;
+    margin-top: 10px;
+}
+.hero-subtitle {
+    font-family: var(--font-accent);
+    font-size: 40px;
+    letter-spacing: 2px;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+
+/* --- RESPONSIVE (MÃ MỚI) --- */
+@media (max-width: 768px) {
+    .page-title, .hero-title {
+        font-size: 48px; /* Giảm kích thước chữ cho di động */
+        letter-spacing: 2px;
+    }
+
+    .hero-home {
+        min-height: 70vh; /* Sử dụng đơn vị vh để linh hoạt hơn */
+    }
+
+    .hero-about,
+    .hero-services,
+    .hero-contact {
+        min-height: 250px;
+    }
 }

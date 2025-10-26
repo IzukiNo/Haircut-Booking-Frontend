@@ -1,19 +1,13 @@
-/* Home Hero Specific */
-.hero-home {
-    padding-top: 40px;
-    padding-bottom: 184px;
-    gap: 94px;
-}
-
-.hero-home .menu-bar {
-    padding: 0 72px;
+/* --- Home Hero Section --- */
+.hero-home .hero-content {
+    gap: 20px; /* Điều chỉnh khoảng cách cho linh hoạt */
 }
 
 .hero-title {
     font-size: 120px;
     letter-spacing: 6px;
-    width: 864px;
-    line-height: 1.2;
+    max-width: 900px; /* ĐÃ TỐI ƯU: Dùng max-width thay vì width cố định */
+    line-height: 1.1; /* Giảm line-height cho chữ lớn */
 }
 
 .hero-est {
@@ -21,7 +15,6 @@
     align-items: center;
     color: var(--color-primary);
     gap: 10px;
-    /* Styles cho est. 2025 */
 }
 
 .est-text, .est-year {
@@ -32,16 +25,18 @@
 .hero-subtitle {
     color: var(--color-white);
     font-size: 40px;
-    font-family: var(--font-heading);
-    margin-top: 50px;
-    text-transform: lowercase;
+    font-family: var(--font-accent); /* Dùng font accent cho nhất quán */
+    margin-top: 15px;
+    text-transform: uppercase; /* Thường thì subtitle cũng nên uppercase */
+    letter-spacing: 2px;
 }
 
-/* Home Services Preview */
+
+/* --- Home Services Preview Section --- */
 .services-section-preview {
     position: relative;
     width: 100%;
-    background-color: var(--color-black);
+    background-color: var(--color-dark); /* Đổi thành dark để nhất quán */
 }
 
 .services-bg-img {
@@ -51,87 +46,51 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 1;
-    opacity: 0.5;
+    z-index: 0; /* Đặt z-index thấp hơn overlay */
+    opacity: 0.15; /* Giảm opacity để nền chìm hơn */
 }
 
 .services-overlay {
     position: relative;
-    z-index: 10;
-    padding: 70px 0 100px 0;
+    z-index: 1; /* Đảm bảo nội dung nổi lên trên ảnh nền */
+    padding: 100px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 100px;
+    gap: 80px; /* Giảm gap một chút */
 }
 
 .service-cards-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 50px;
-    width: 724px;
+    gap: 40px;
+    max-width: 724px; /* ĐÃ TỐI ƯU: Dùng max-width */
+    width: 100%;
 }
 
-/* --- TABLET VIEW (max-width: 1024px) --- */
-@media (max-width: 1024px) {
-    .container {
-        padding: 0 40px; /* Giảm padding hai bên */
-    }
 
+/* --- RESPONSIVE FOR HOME PAGE ONLY --- */
+@media (max-width: 992px) { /* Tablet view */
     .hero-title {
-        font-size: 90px; /* Giảm cỡ chữ tiêu đề */
-        width: auto;
-    }
-
-    .counter-grid {
-        gap: 60px; /* Giảm khoảng cách giữa các counter */
-        padding: 0 20px;
-    }
-
-    .service-cards-container {
-        width: 100%; /* Cho phép các card chiếm toàn bộ chiều rộng */
+        font-size: 90px;
+        letter-spacing: 4px;
     }
 }
 
-/* --- MOBILE VIEW (max-width: 768px) --- */
-@media (max-width: 768px) {
-    /* Menu sẽ được ẩn và thay bằng Hamburger Menu (xem phần JS) */
-    .menu-links, .menu-actions {
-        display: none;
-    }
-
+@media (max-width: 768px) { /* Mobile view */
     .hero-title {
-        font-size: 60px; /* Tiếp tục giảm cỡ chữ */
+        font-size: 60px;
         letter-spacing: 3px;
     }
 
-    /* Xếp các card thành 1 cột */
-    .service-cards-container, .counter-grid, .testimonial-cards-grid {
-        flex-direction: column;
-        align-items: center;
-        gap: 40px;
+    .hero-subtitle {
+        font-size: 30px;
+    }
+    
+    .services-overlay {
+        padding: 80px 20px; /* Thêm padding ngang cho an toàn */
     }
 
-    .service-card, .counter-item {
-        width: 100%;
-        max-width: 350px; /* Giới hạn chiều rộng tối đa */
-    }
-
-    /* Chỉnh lại Banner */
-    .discount-banner-wrapper {
-        flex-direction: column;
-        height: auto;
-        padding: 40px;
-        text-align: center;
-    }
-
-    .discount-img {
-        position: static;
-        width: 80%;
-        height: auto;
-        margin-top: 20px;
-        filter: none;
-        box-shadow: none;
-    }
+    /* .service-cards-container đã tự động xuống hàng nhờ flex-wrap, không cần thêm code */
 }

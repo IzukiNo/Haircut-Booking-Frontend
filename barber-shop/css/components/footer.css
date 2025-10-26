@@ -1,3 +1,4 @@
+
 .footer-section {
     padding: 60px 0;
     background-color: var(--color-white);
@@ -12,11 +13,15 @@
 
 .footer-quote {
     font-size: 16px;
+    max-width: 600px; /* Thêm giới hạn chiều rộng để câu quote không quá dài */
+    margin: 0 auto; /* Căn giữa câu quote */
 }
 
 .contact-info-grid {
     display: flex;
     justify-content: center;
+    align-items: flex-start; /* Căn các item theo đỉnh */
+    flex-wrap: wrap; /* Cho phép xuống hàng nếu cần */
     gap: 75px;
     margin-bottom: 80px;
 }
@@ -26,6 +31,7 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    min-width: 150px; /* Đặt chiều rộng tối thiểu để tránh bị co lại quá mức */
 }
 
 .contact-title {
@@ -36,15 +42,32 @@
 
 .working-hours {
     font-size: 17px;
+    line-height: 1.5; /* Cải thiện khoảng cách dòng */
 }
 
 .divider {
     width: 100%;
     height: 1px;
-    background-color: #ccc;
+    background-color: #ddd; /* Làm màu nhạt hơn một chút */
     margin-bottom: 35px;
 }
 
 .copyright {
     font-size: 17px;
+    color: var(--color-gray);
+}
+
+
+/* --- RESPONSIVE (MÃ MỚI) --- */
+@media (max-width: 768px) {
+    .contact-info-grid {
+        flex-direction: column; /* Chuyển sang layout cột */
+        align-items: center;    /* Căn giữa các item trong cột */
+        gap: 40px;              /* Giảm khoảng cách khi xếp dọc */
+        margin-bottom: 60px;
+    }
+    
+    .footer-section .section-header {
+        margin-bottom: 60px;
+    }
 }

@@ -1,72 +1,69 @@
-/* About Page Specific Hero */
-.hero-about {
-    height: 381px;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    gap: 100px;
-}
 
-.hero-about .menu-bar {
-    padding: 0 100px;
-}
-
-/* Helper class to change pre-title color */
 .text-primary {
     color: var(--color-primary);
 }
 
-/* Barbers Section */
+/* --- Khu vực giới thiệu Barbers --- */
 .barbers-section {
-    padding: 60px 0;
+    padding: 100px 0;
     background-color: var(--color-white);
 }
 
 .barbers-section .section-header {
-    margin-bottom: 60px;
+    margin-bottom: 80px;
 }
 
 .barber-cards-grid {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Cho phép thẻ tự động xuống hàng */
     justify-content: center;
-    gap: 24px;
+    gap: 30px; /* Tăng gap một chút cho thoáng */
 }
 
 .barber-card {
-    width: 410px;
-    height: 520px;
     background-color: var(--color-dark);
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    transition: transform 0.3s ease;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    
+    /* Đơn giản hóa responsive: thẻ sẽ tự sắp xếp */
+    flex: 1 1 350px; /* flex-grow, flex-shrink, flex-basis */
+    max-width: 410px; /* Giữ nguyên chiều rộng tối đa */
 }
 
 .barber-card:hover {
     transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 .barber-photo {
     width: 100%;
     height: 340px;
     object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.barber-card:hover .barber-photo {
+    transform: scale(1.05); /* Hiệu ứng zoom ảnh khi hover */
 }
 
 .barber-info {
-    flex-grow: 1; /* Make this div fill remaining space */
+    flex-grow: 1;
     padding: 30px;
-    background-color: var(--color-dark);
     color: var(--color-white);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center; /* Căn giữa nội dung theo chiều dọc */
     align-items: center;
+    gap: 20px; /* Thêm gap để tạo khoảng cách */
 }
 
 .barber-name {
     font-size: 22px;
     letter-spacing: 1.1px;
     text-transform: uppercase;
+    font-family: var(--font-heading);
 }
 
 .barber-socials {
@@ -79,33 +76,32 @@
     width: 15px;
     height: 15px;
     background-color: var(--color-primary);
-    /* In a real project, use SVG icons with mask-image */
+    transition: opacity 0.3s;
+}
+
+.social-icon:hover {
+    opacity: 0.8;
 }
 
 .btn-book-barber {
-    width: 156px;
-    height: 40px;
+    /* Đã được định nghĩa trong base.css, chỉ cần override màu sắc */
     background-color: transparent;
     color: var(--color-primary);
-    font-size: 17px;
-    font-weight: 700;
-    border: none; /* remove default border */
+    border: 2px solid var(--color-primary); /* Thêm border cho rõ ràng */
+    padding: 10px 30px;
+    height: auto;
+    font-size: 16px;
+    margin-top: 10px; /* Thêm khoảng cách */
 }
 
-/* --- TABLET VIEW (max-width: 1024px) --- */
-@media (max-width: 1024px) {
-    .barber-cards-grid {
-        gap: 20px;
-    }
-    .barber-card {
-        width: calc(50% - 10px); /* Hiển thị 2 card trên 1 hàng */
-    }
+.btn-book-barber:hover {
+    background-color: var(--color-primary);
+    color: var(--color-black);
 }
 
-/* --- MOBILE VIEW (max-width: 768px) --- */
+/* --- RESPONSIVE --- */
 @media (max-width: 768px) {
-    .barber-card {
-        width: 100%; /* Hiển thị 1 card trên 1 hàng */
-        max-width: 410px;
+    .barbers-section {
+        padding: 80px 20px;
     }
 }

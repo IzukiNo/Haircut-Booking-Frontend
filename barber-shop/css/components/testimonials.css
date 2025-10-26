@@ -1,3 +1,4 @@
+
 .testimonials-section {
     padding: 60px 0 120px 0;
     background-color: var(--color-white);
@@ -12,6 +13,8 @@
 .testimonial-cards-grid {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start; /* Align items to the top */
+    flex-wrap: wrap; /* Allow wrapping on medium screens */
     gap: 30px;
 }
 
@@ -19,8 +22,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 50px;
+    gap: 30px; /* Reduced gap slightly */
     flex: 1;
+    min-width: 280px; /* Set a minimum width */
 }
 
 .client-avatar {
@@ -33,10 +37,26 @@
 .client-comment {
     font-size: 16px;
     max-width: 301px;
+    line-height: 1.6; /* TĂNG KHẢ NĂNG ĐỌC: Thêm khoảng cách dòng */
 }
 
 .client-name {
     color: var(--color-primary);
     font-size: 18px;
     font-weight: 700;
+    text-transform: uppercase; /* Thêm để nhất quán với các label khác */
+}
+
+
+/* --- RESPONSIVE (MÃ MỚI) --- */
+@media (max-width: 768px) {
+    .testimonial-cards-grid {
+        flex-direction: column; /* Xếp thành một cột */
+        align-items: center;
+        gap: 50px; /* Tăng gap khi xếp dọc */
+    }
+    
+    .testimonials-section {
+        padding: 60px 20px 80px 20px; /* Giảm padding dưới và thêm padding ngang */
+    }
 }

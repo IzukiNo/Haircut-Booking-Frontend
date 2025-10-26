@@ -1,3 +1,4 @@
+/* --- COUNTER COMPONENT STYLES --- */
 .counter-section {
     width: 100%;
     background-color: var(--color-dark);
@@ -6,22 +7,26 @@
 
 .counter-grid {
     display: flex;
-    justify-content: center;
-    gap: 180px;
+    justify-content: space-around; /* Dùng space-around để phân bố đều */
+    align-items: center;
+    flex-wrap: wrap; /* Cho phép tự động xuống hàng khi không đủ không gian */
+    gap: 80px; /* Giảm gap một chút cho hợp lý hơn */
 }
 
 .counter-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 35px;
-    flex-grow: 1;
+    gap: 25px; /* Giảm gap một chút */
+    text-align: center;
+    min-width: 200px; /* Đặt chiều rộng tối thiểu */
 }
 
 .count-number {
     color: var(--color-primary);
     font-size: 70px;
     letter-spacing: 3.5px;
+    line-height: 1; /* Đảm bảo không chiếm quá nhiều không gian dọc */
 }
 
 .count-label {
@@ -29,4 +34,21 @@
     font-size: 22px;
     letter-spacing: 1.1px;
     text-transform: uppercase;
+}
+
+
+/* --- RESPONSIVE (MÃ MỚI) --- */
+@media (max-width: 768px) {
+    .counter-grid {
+        flex-direction: column; /* Xếp thành một cột duy nhất trên mobile */
+        gap: 50px;
+    }
+
+    .count-number {
+        font-size: 56px; /* Giảm kích thước chữ cho dễ nhìn */
+    }
+
+    .count-label {
+        font-size: 18px;
+    }
 }

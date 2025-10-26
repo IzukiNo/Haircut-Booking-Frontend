@@ -1,106 +1,65 @@
-/* Contact Page Specific Hero */
-.hero-contact {
-    height: 381px;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    gap: 100px;
-}
-
-.hero-contact .menu-bar {
-    padding: 0 100px;
-}
-
-/* Form & Info Section */
+/* --- KHU VỰC LIÊN HỆ (Contact Section) --- */
 .contact-form-section {
-    padding: 120px 0 60px 0;
+    padding: 120px 0;
     background-size: cover;
     background-position: center;
     position: relative;
 }
-/* Add a semi-transparent overlay */
+
 .contact-form-section::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.4);
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(33, 33, 33, 0.7); /* Làm overlay tối hơn một chút */
     z-index: 1;
 }
+
 .contact-grid {
     position: relative;
     z-index: 2;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
+    grid-template-columns: 1fr 1.2fr; /* Cho form rộng hơn một chút */
+    gap: 60px; /* Tăng gap */
     align-items: flex-start;
 }
 
 .contact-details {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 30px;
+    gap: 40px;
     color: var(--color-white);
-    padding-top: 40px;
+    padding-top: 20px;
 }
 
 .contact-heading {
     font-size: 60px;
     letter-spacing: 3px;
     font-family: var(--font-heading);
+    text-align: left; /* Căn lề trái cho đẹp hơn */
 }
 
 .info-group {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    text-align: left;
 }
 
 .info-title {
     font-size: 24px;
     letter-spacing: 1.2px;
     font-family: var(--font-heading);
+    color: var(--color-primary); /* Thêm màu nhấn */
 }
 
 .info-text {
     font-size: 20px;
+    line-height: 1.6;
 }
 
-/* Contact Page Banner */
-.contact-banner-section {
-    padding: 60px 0;
-    background-color: var(--color-white);
-}
-.contact-banner {
-    width: 100%;
-    height: 535px;
-    position: relative;
-    background: var(--color-primary);
-    display: flex;
-    align-items: center;
-    padding: 0 72px;
-}
-
-.contact-banner .banner-text-content {
-    display: flex;
-    flex-direction: column;
-    gap: 45px;
-}
-.contact-banner .banner-img {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 526px;
-    height: 535px;
-    object-fit: cover;
-}
-
-/* Brands Section */
+/* --- Khu vực Thương hiệu (Brands) --- */
 .brands-section {
-    padding: 60px 0;
+    padding: 100px 0;
     background-color: var(--color-dark);
 }
 
@@ -108,40 +67,80 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 40px;
+    gap: 60px;
+    flex-wrap: wrap;
 }
 
 .brands-text {
     color: var(--color-white);
     display: flex;
     flex-direction: column;
-    gap: 35px;
-    max-width: 450px;
+    gap: 25px;
+    flex: 1 1 400px; /* Cho phép co giãn */
 }
 
 .brands-title {
     font-size: 45px;
     letter-spacing: 2.25px;
+    font-family: var(--font-heading);
 }
 
 .brands-description {
     font-size: 18px;
+    color: var(--color-gray);
+    line-height: 1.7;
 }
 
 .brands-logos {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap; /* Cho phép logo tự xuống hàng */
     gap: 30px;
-}
-
-.logo-row {
-    display: flex;
-    gap: 30px;
+    justify-content: center;
+    flex: 1 1 500px;
 }
 
 .brand-logo {
     width: 150px;
     height: 108px;
     object-fit: contain;
-    filter: grayscale(1) brightness(2); /* Makes logos white-ish */
+    filter: grayscale(1) brightness(2);
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.brand-logo:hover {
+    opacity: 1;
+}
+
+
+/* --- RESPONSIVE (MÃ MỚI) --- */
+@media (max-width: 992px) {
+    .contact-grid {
+        grid-template-columns: 1fr; /* Chuyển thành 1 cột */
+        gap: 80px;
+    }
+
+    .contact-details {
+        align-items: center;
+        text-align: center;
+    }
+
+    .contact-heading, .info-group {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-form-section {
+        padding: 80px 20px;
+    }
+
+    .brands-section {
+        padding: 80px 20px;
+    }
+
+    .brands-content {
+        justify-content: center;
+        text-align: center;
+    }
 }
