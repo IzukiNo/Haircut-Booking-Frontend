@@ -4,36 +4,18 @@
     <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BARBERSHOP - Home</title>
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bebas+Neue&family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/reset.css"><link rel="stylesheet" href="css/variables.css"><link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/components/navigation.css"><link rel="stylesheet" href="css/components/hero.css"><link rel="stylesheet" href="css/components/cards.css">
-    <link rel="stylesheet" href="css/components/counter.css"><link rel="stylesheet" href="css/components/banner.css"><link rel="stylesheet" href="css/components/testimonials.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components/navigation.css">
+    <link rel="stylesheet" href="css/components/hero.css">
+    <link rel="stylesheet" href="css/components/cards.css">
+    <link rel="stylesheet" href="css/components/counter.css">
+    <link rel="stylesheet" href="css/components/banner.css"><link rel="stylesheet" href="css/components/testimonials.css">
     <link rel="stylesheet" href="css/components/footer.css"><link rel="stylesheet" href="css/pages/home.css">
 </head>
 <body class="homepage">
-
-    <nav class="main-header" id="main-header">
-        <div class="container menu-bar">
-            <nav class="menu-links">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="services.html" class="nav-link">Services</a>
-                <a href="about.html" class="nav-link">About Us</a>
-                <a href="contact.html" class="nav-link">Contact Us</a>
-            </nav>
-            <div class="menu-actions">
-                <a href="auth.html" class="btn btn-login">Login</a>
-                <a href="#" class="btn btn-book">BOOK APPOINTMENT</a>
-            </div>
-        </div>
-        <button class="hamburger-btn" id="hamburger-btn"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
-    </nav>
-    
-    <div class="mobile-nav" id="mobile-nav">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="services.html" class="nav-link">Services</a>
-        <a href="about.html" class="nav-link">About Us</a>
-        <a href="contact.html" class="nav-link">Contact Us</a>
-    </div>
-
+    <div data-component="header"></div><div data-component="mobile-nav"></div> 
     <header class="hero-content-area hero-home" style="background-image: url('https://placehold.co/1440x942');">
         <div class="hero-content">
             <h1 class="hero-title">BARBERSHOP</h1>
@@ -41,21 +23,19 @@
             <p class="hero-subtitle">shaves & trims</p>
         </div>
     </header>
-
     <section class="services-section-preview">
         <img src="https://placehold.co/1645x1374" alt="Background services" class="services-bg-img">
         <div class="services-overlay">
-            <div class="section-header"><p class="pre-title">OUR TREATMENT</p><h2 class="section-title text-light">SERVICES</h2></div>
+            <div class="section-header"><p class="pre-title">OUR TREATMENT</p><h2 class="section-title">SERVICES</h2></div>
             <div class="service-cards-container">
                 <div class="service-card"><div class="card-icon"></div><h3 class="card-title">HAIRCUT & BEARD TRIM</h3><p class="card-description">✂️ Professional haircut combined with precise beard trimming for a sharp, masculine look.</p></div>
                 <div class="service-card"><div class="card-icon"></div><h3 class="card-title">SHAVES & HAIRCUT</h3><p class="card-description">💈 Classic barber service with a clean shave and fresh haircut.</p></div>
                 <div class="service-card"><div class="card-icon"></div><h3 class="card-title">FACIAL & SHAVE</h3><p class="card-description">🌿 Rejuvenating facial treatment combined with a clean, refreshing shave.</p></div>
                 <div class="service-card"><div class="card-icon"></div><h3 class="card-title">THE BIG DAY</h3><p class="card-description">🎩 Look your absolute best on the most important day of your life.</p></div>
             </div>
-            <a href="services.html" class="btn explore-btn">EXPLORE NOW</a>
+            <a href="services.html" class="btn btn-primary explore-btn">EXPLORE NOW</a>
         </div>
     </section>
-
     <section class="counter-section">
         <div class="container counter-grid">
             <div class="counter-item"><div class="counter-icon"></div><p class="count-number">2500</p><p class="count-label">SHAVES</p></div>
@@ -63,44 +43,9 @@
             <div class="counter-item"><div class="counter-icon"></div><p class="count-number">9</p><p class="count-label">OPEN SHOPS</p></div>
         </div>
     </section>
-
-    <section class="banner-section">
-        <div class="discount-banner-wrapper">
-            <div class="discount-text-box">
-                <h2 class="discount-title">25% DISCOUNT</h2>
-                <p class="discount-description">🪒 Discover our latest grooming product with a special discount this week. Limited time only!</p>
-                <a href="#" class="btn btn-dark">BOOK NOW</a>
-            </div>
-            <div class="discount-image-box"><img src="https://placehold.co/562x528" alt="Discount product" class="discount-img"></div>
-        </div>
-    </section>
-
-    <section class="testimonials-section">
-        <div class="container">
-            <div class="section-header"><p class="pre-title">WHAT PEOPLE SAY ABOUT US</p><h2 class="section-title text-dark">CLIENTS REVIEWS</h2></div>
-            <div class="testimonial-cards-grid">
-                <div class="testimonial-card"><img src="https://placehold.co/98x98" alt="Client 1" class="client-avatar"><p class="client-comment">"The best haircut I've ever had. Professional and friendly staff."</p><p class="client-name">John Doe</p></div>
-                <div class="testimonial-card"><img src="https://placehold.co/98x98" alt="Client 2" class="client-avatar"><p class="client-comment">"A truly premium barbershop experience. Highly recommended!"</p><p class="client-name">Mark Smith</p></div>
-                <div class="testimonial-card"><img src="https://placehold.co/98x98" alt="Client 3" class="client-avatar"><p class="client-comment">"Attention to detail is amazing. I'll definitely be back."</p><p class="client-name">Alan Wake</p></div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer-section">
-        <div class="container">
-            <div class="footer-contact-info">
-                <div class="section-header"><h2 class="section-title text-dark">CONTACT US</h2><p class="footer-quote">💈 “Come to us when you want to upgrade your male beauty.”</p></div>
-                <div class="contact-info-grid">
-                    <div class="contact-item"><div class="contact-icon"></div><h3 class="contact-title">ADDRESS</h3></div>
-                    <div class="contact-item"><div class="contact-icon"></div><h3 class="contact-title">EMAIL</h3></div>
-                    <div class="contact-item"><div class="contact-icon"></div><h3 class="contact-title">PHONE</h3></div>
-                    <div class="contact-item"><div class="contact-icon"></div><h3 class="contact-title">WORKING HOURS</h3><p class="working-hours">Mon - Fri: 10am - 6pm<br>Sat - Sun: 10am - 5pm</p></div>
-                </div>
-            </div>
-            <div class="divider"></div><p class="copyright">© Copyright Barbershop 2025</p>
-        </div>
-    </footer>
-    
+    <div data-component="promo-banner"></div> 
+    <div data-component="testimonials"></div> 
+    <div data-component="footer"></div> 
     <script src="js/main.js" defer></script>
 </body>
 </html>
