@@ -139,8 +139,7 @@
 
   .main-header {
     display: flex;
-    justify-content: flex-end;
-    /* Đẩy nút hamburger sang phải */
+    justify-content: flex-start;
     padding: 20px 0;
   }
 
@@ -173,4 +172,20 @@
   .mobile-nav .nav-link {
     font-size: 20px;
   }
+}
+.mobile-nav-actions {
+    display: flex;
+    flex-direction: column; /* Xếp các nút theo chiều dọc */
+    gap: 15px;              /* Tạo khoảng cách giữa các nút */
+    margin-top: 30px;       /* Tạo khoảng cách với các link ở trên */
+    padding-top: 30px;      /* Thêm một đường kẻ ngang để phân tách */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    width: 80%;
+    max-width: 250px;       /* Giới hạn chiều rộng của các nút */
+    align-items: center;    /* Căn giữa các nút */
+}
+
+/* Đảm bảo các nút chiếm toàn bộ chiều rộng có thể */
+.mobile-nav-actions .btn {
+    width: 100%;
 }
