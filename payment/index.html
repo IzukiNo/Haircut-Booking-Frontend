@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thanh toán lịch hẹn</title>
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/variables.css" />
+    <link rel="stylesheet" href="payment.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <div class="payment-modal-overlay" id="payment-modal">
+      <div class="payment-modal-popup" id="payment-step1">
+        <div class="payment-modal-title" id="payment-modal-title">
+          Thanh toán
+        </div>
+        <div
+          class="payment-user"
+          id="payment-user"
+          style="text-align: center; font-size: large; font-weight: 600"
+        >
+          Tên khách hàng
+        </div>
+        <div class="payment-services" id="payment-services"></div>
+        <div class="payment-total">
+          <span>Tổng tiền</span><span id="payment-total">0đ</span>
+        </div>
+        <div class="payment-modal-actions">
+          <button class="btn btn-confirm" id="confirm-btn">Xác nhận</button>
+        </div>
+      </div>
+      <div class="payment-modal-popup" id="payment-step2" style="display: none">
+        <div class="review-title">Đánh giá dịch vụ</div>
+        <textarea
+          class="review-comment-box"
+          id="review-comment"
+          placeholder="Nhận xét của bạn..."
+        ></textarea>
+        <div class="review-stars" id="review-stars"></div>
+        <div class="review-examples" id="review-examples"></div>
+        <button class="btn btn-confirm" id="submit-review">Gửi đánh giá</button>
+      </div>
+      <div class="payment-thankyou" id="payment-thankyou" style="display: none">
+        <div>🎉 Cảm ơn quý khách đã sử dụng dịch vụ!</div>
+      </div>
+    </div>
+    <!-- Popup QR riêng -->
+    <div class="payment-modal-overlay" id="qr-modal" style="display: none">
+      <div class="payment-modal-popup">
+        <div class="payment-modal-title">Quét mã QR để thanh toán</div>
+        <div
+          class="payment-qr"
+          style="display: flex; flex-direction: column; align-items: center"
+        >
+          <img
+            id="qr-img-popup"
+            src=""
+            alt="QR Code"
+            style="max-width: 220px; margin-bottom: 12px"
+          />
+          <div id="qr-label-popup">
+            Vui lòng quét mã bằng ứng dụng ngân hàng hoặc ví điện tử
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="payment.js"></script>
+  </body>
+</html>

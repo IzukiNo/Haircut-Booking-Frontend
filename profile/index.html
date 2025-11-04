@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BARBERSHOP - Customer Profile</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/variables.css" />
+    <link rel="stylesheet" href="css/profile.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body class="profile-page">
+    <main class="profile-container">
+      <aside class="profile-sidebar">
+        <div class="avatar-container">
+          <img class="avatar" src="../assets/profile/client.png" />
+        </div>
+        <div class="user-info">
+          <h2 class="user-name" id="customer-name">-</h2>
+          <p class="user-email" id="customer-email">-</p>
+        </div>
+        <div class="role-badge">
+          <span class="dot"></span><span id="role-label">-</span>
+        </div>
+        <div class="profile-actions-card">
+          <div class="stats-grid">
+            <div class="stat-item">
+              <p class="stat-number" id="customer-points">0</p>
+              <p class="stat-label">Điểm tích lũy</p>
+            </div>
+          </div>
+          <div class="action-buttons">
+            <button class="btn btn-outline" id="change-password-button">
+              Đổi mật khẩu
+            </button>
+            <button class="btn btn-outline" onclick="handleLogout()">
+              Đăng xuất
+            </button>
+            <button
+              class="btn btn-feature"
+              onclick="window.location.href='../booking'"
+            >
+              Đặt Lịch Hẹn
+            </button>
+          </div>
+        </div>
+      </aside>
+
+      <section class="profile-content">
+        <header class="content-header">
+          <h3>Chi tiết hồ sơ</h3>
+        </header>
+
+        <div class="content-body">
+          <nav class="content-tabs">
+            <a href="#" class="tab-item is-active" data-target="info"
+              >Thông Tin</a
+            >
+            <a href="#" class="tab-item" data-target="history"
+              >Lịch Sử Đặt Lịch</a
+            >
+            <a href="#" class="tab-item" data-target="portfolio"
+              >Tệp & Hình Mẫu</a
+            >
+            <a href="#" class="tab-item" data-target="change-password"
+              >Đổi Mật Khẩu</a
+            >
+          </nav>
+
+          <div class="tab-pane is-active" id="info">
+            <form class="profile-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="fullname" id="fullname-label">Họ và tên</label>
+                  <input type="text" id="fullname" value="" />
+                </div>
+                <div class="form-group">
+                  <label for="email" id="email-label">Email</label>
+                  <input type="email" id="email" value="" readonly />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="phone" id="phone-label">Số điện thoại</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    value=""
+                    pattern="[0-9]*"
+                    inputmode="numeric"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="role" id="role-label">Vai trò</label>
+                  <input type="text" id="role" value="-" readonly />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group full-width">
+                  <label for="preferences" id="preferences-label"
+                    >Sở thích kiểu tóc</label
+                  >
+                  <input
+                    type="text"
+                    id="preferences"
+                    value="Undercut, Side Part"
+                  />
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="tab-pane" id="history" data-target="history">
+            <div id="history-list">
+              <!-- <div class="history-item">
+                <div class="history-info">
+                  <div class="history-service">Cắt tóc nam hiện đại</div>
+                  <div class="history-date">30/10/2025 - 14:00</div>
+                  <div class="history-status completed">Hoàn thành</div>
+                </div>
+                <div class="history-barber">Barber: Anh Tuấn</div>
+              </div> -->
+            </div>
+            <div class="pagination-bar" id="history-pagination">
+              <button class="btn btn-outline" id="prev-page" disabled>
+                Trước
+              </button>
+              <span id="page-info">Trang 1</span>
+              <button class="btn btn-outline" id="next-page" disabled>
+                Tiếp
+              </button>
+            </div>
+          </div>
+
+          <div class="tab-pane" id="portfolio">
+            <p>
+              Đây là nơi bạn có thể lưu lại những kiểu tóc yêu thích để tham
+              khảo cho lần cắt tiếp theo.
+            </p>
+          </div>
+
+          <div class="tab-pane" id="change-password">
+            <form class="change-password-form" onsubmit="return false;">
+              <div class="form-row">
+                <div class="form-group full-width">
+                  <label for="current-password">Mật khẩu hiện tại</label>
+                  <div class="input-password-wrapper">
+                    <input
+                      type="password"
+                      id="current-password"
+                      name="current-password"
+                      required
+                    />
+                    <button
+                      type="button"
+                      class="toggle-password"
+                      data-target="current-password"
+                      tabindex="-1"
+                      aria-label="Hiện/Ẩn mật khẩu"
+                    >
+                      <img
+                        src="../assets/profile/eye.svg"
+                        class="icon-eye"
+                        width="22"
+                        height="22"
+                        alt="Hiện mật khẩu"
+                      />
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group full-width" style="margin-top: 10px">
+                  <label for="new-password">Mật khẩu mới</label>
+                  <div class="input-password-wrapper">
+                    <input
+                      type="password"
+                      id="new-password"
+                      name="new-password"
+                      required
+                    />
+                    <button
+                      type="button"
+                      class="toggle-password"
+                      data-target="new-password"
+                      tabindex="-1"
+                      aria-label="Hiện/Ẩn mật khẩu"
+                    >
+                      <img
+                        src="../assets/profile/eye.svg"
+                        class="icon-eye"
+                        width="22"
+                        height="22"
+                        alt="Hiện mật khẩu"
+                      />
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group full-width">
+                  <label for="confirm-password" style="margin-top: 10px"
+                    >Xác nhận mật khẩu mới</label
+                  >
+                  <div class="input-password-wrapper">
+                    <input
+                      type="password"
+                      id="confirm-password"
+                      name="confirm-password"
+                      required
+                    />
+                    <button
+                      type="button"
+                      class="toggle-password"
+                      data-target="confirm-password"
+                      tabindex="-1"
+                      aria-label="Hiện/Ẩn mật khẩu"
+                    >
+                      <img
+                        src="../assets/profile/eye.svg"
+                        class="icon-eye"
+                        width="22"
+                        height="22"
+                        alt="Hiện mật khẩu"
+                      />
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <button
+                class="btn btn-dark"
+                id="change-password-button"
+                style="margin-top: 20px"
+                onclick="handleChangePasswordButton()"
+              >
+                Đổi mật khẩu
+              </button>
+            </form>
+          </div>
+
+          <footer class="content-footer" id="content-footer">
+            <button
+              class="btn btn-dark"
+              id="save-button"
+              onclick="handleSaveButtonClick()"
+              disabled
+            >
+              Lưu thay đổi
+            </button>
+          </footer>
+        </div>
+      </section>
+    </main>
+    <script src="js/profile.js"></script>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Barbershop - Dashboard - Settings</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/variables.css" />
+    <link rel="stylesheet" href="../css/pages/dashboard.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body class="dashboard-page">
+    <div class="dashboard-layout">
+      <aside class="dashboard-sidebar"></aside>
+      <div class="main-wrapper">
+        <header class="dashboard-header">
+          <button class="sidebar-toggle" id="sidebar-toggle">☰</button>
+        </header>
+
+        <main class="dashboard-main">
+          <div class="main-header-controls">
+            <h1 class="main-title">Cài đặt Cửa hàng</h1>
+            <div class="form-group">
+              <select
+                id="branch-settings-select"
+                name="shop-branch"
+                class="branch-settings-select"
+              >
+                <option value="">Chọn chi nhánh</option>
+              </select>
+            </div>
+          </div>
+
+          <form class="settings-form">
+            <div class="card">
+              <div class="card-header">
+                <h3>Thông tin cơ bản</h3>
+              </div>
+              <div class="card-body form-grid">
+                <div class="form-group full-span">
+                  <label for="shop-logo">Logo / Ảnh đại diện</label>
+                  <div class="logo-upload">
+                    <div class="logo-preview"></div>
+                    <input type="file" id="shop-logo" accept="image/*" />
+                    <label for="shop-logo" class="btn-upload"
+                      >Tải ảnh lên</label
+                    >
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="shop-name">Tên cửa hàng</label>
+                  <input type="text" id="shop-name" value="" />
+                </div>
+                <div class="form-group">
+                  <label for="shop-phone">Số điện thoại</label>
+                  <input type="tel" id="shop-phone" value="" />
+                </div>
+                <div class="form-group full-span">
+                  <label for="shop-address">Địa chỉ</label>
+                  <input type="text" id="shop-address" value="" />
+                </div>
+              </div>
+            </div>
+          </form>
+
+          <div class="form-actions">
+            <button class="btn-save">Lưu thay đổi</button>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="js/settingHandler.js"></script>
+    <script src="js/dashboard.js"></script>
+  </body>
+</html>

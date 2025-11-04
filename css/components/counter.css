@@ -1,0 +1,125 @@
+/* --- COUNTER COMPONENT STYLES --- */
+.counter-section {
+  width: 100%;
+  background-color: var(--color-dark);
+  padding: 60px 0;
+}
+
+.counter-grid {
+  display: flex;
+  justify-content: space-around; /* Dùng space-around để phân bố đều */
+  align-items: center;
+  flex-wrap: wrap; /* Cho phép tự động xuống hàng khi không đủ không gian */
+  gap: 80px; /* Giảm gap một chút cho hợp lý hơn */
+}
+
+.counter-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px; /* Giảm gap một chút */
+  text-align: center;
+  min-width: 200px; /* Đặt chiều rộng tối thiểu */
+}
+
+.counter-icon {
+  width: 80px;
+  height: 80px;
+  background-size: 45px 45px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.counter-icon:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-primary);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  background-size: 48px 48px;
+}
+
+/* Active state for click feedback */
+.counter-icon:active {
+  transform: translateY(-1px) scale(0.98);
+  transition: all 0.1s ease;
+}
+
+/* Specific icons for each counter item */
+.counter-item:nth-child(1) .counter-icon {
+  background-image: url("../../assets/landing/razor.svg");
+}
+
+.counter-item:nth-child(2) .counter-icon {
+  background-image: url("../../assets/landing/scissors.svg");
+}
+
+.counter-item:nth-child(3) .counter-icon {
+  background-image: url("../../assets/landing/store.svg");
+}
+
+/* Clean counter icons with proper hover effects */
+
+.count-number {
+  color: var(--color-primary);
+  font-size: 70px;
+  letter-spacing: 3.5px;
+  line-height: 1; /* Đảm bảo không chiếm quá nhiều không gian dọc */
+}
+
+.count-label {
+  color: var(--color-white);
+  font-size: 22px;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+}
+
+/* --- RESPONSIVE (MÃ MỚI) --- */
+@media (max-width: 768px) {
+  .counter-grid {
+    flex-direction: column; /* Xếp thành một cột duy nhất trên mobile */
+    gap: 50px;
+  }
+  .counter-icon {
+    width: 60px;
+    height: 60px;
+    background-size: 32px 32px;
+  }
+
+  .counter-icon:hover {
+    transform: translateY(-2px);
+    background-size: 34px 34px;
+  }
+
+  .count-number {
+    font-size: 56px; /* Giảm kích thước chữ cho dễ nhìn */
+  }
+
+  .count-label {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .counter-icon {
+    width: 50px;
+    height: 50px;
+    background-size: 28px 28px;
+  }
+
+  .counter-icon:hover {
+    transform: translateY(-1px);
+    background-size: 30px 30px;
+  }
+
+  .count-number {
+    font-size: 48px;
+  }
+
+  .count-label {
+    font-size: 16px;
+  }
+}

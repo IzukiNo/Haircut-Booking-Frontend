@@ -1,0 +1,252 @@
+@import url("../css/variables.css");
+
+body {
+  background: var(--color-dark);
+  padding: 0;
+  margin: 0;
+}
+
+.booking-container {
+  max-width: 520px;
+  margin: 48px auto;
+  background: var(--color-white);
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(33, 33, 33, 0.06);
+  padding: 32px 28px;
+}
+.booking-title {
+  font-size: 2rem;
+  font-family: var(--font-heading);
+  color: var(--color-dark);
+  margin-bottom: 28px;
+  text-align: center;
+}
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.form-row {
+  display: flex;
+  gap: 18px;
+}
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.form-group label {
+  font-size: 15px;
+  color: var(--color-dark);
+  font-weight: 600;
+}
+.form-group input,
+.form-group select {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--color-gray);
+  background: var(--color-white);
+  font-size: 15px;
+  font-family: var(--font-body);
+  color: var(--color-dark);
+  outline: none;
+  transition: border 0.18s;
+}
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--color-primary);
+}
+.btn-booking {
+  background: var(--color-primary);
+  color: var(--color-dark);
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 13px 0;
+  width: 100%;
+  margin-top: 18px;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s, transform 0.15s;
+}
+.btn-booking:hover,
+.btn-booking:focus {
+  background: #ffe08a;
+  color: var(--color-black);
+  transform: translateY(-1px) scale(1.02);
+}
+.form-note {
+  margin-top: 18px;
+}
+.form-note textarea {
+  min-height: 90px;
+  font-size: 16px;
+  font-family: var(--font-body);
+  padding: 16px 14px;
+  border-radius: 12px;
+  border: 1.5px solid var(--color-gray);
+  background: var(--color-white);
+  color: var(--color-dark);
+  resize: vertical;
+  width: 100%;
+  box-sizing: border-box;
+}
+.form-note textarea:focus {
+  border-color: var(--color-primary);
+}
+.booking-header {
+  width: 100%;
+  left: 0;
+  top: 0;
+  margin: 0;
+  padding: 18px 32px;
+  background: var(--color-primary);
+  border-bottom: 1px solid #e5e5e5;
+  box-sizing: border-box;
+  box-shadow: 0 2px 8px rgba(33, 33, 33, 0.07);
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.header-logo {
+  font-family: var(--font-heading);
+  font-size: 1.7rem;
+  color: var(--color-dark);
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.header-right {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+/* Dropdown redesign */
+.user-profile {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-md);
+  transition: background 0.2s;
+}
+.user-profile:focus,
+.user-profile:hover {
+  background: var(--color-bg-hover);
+}
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.user-name {
+  font-weight: 500;
+  color: var(--color-text);
+}
+.dropdown-arrow {
+  font-size: 1rem;
+  margin-left: 0.25rem;
+  color: var(--color-accent);
+  pointer-events: none;
+}
+.dropdown-menu {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  min-width: 140px;
+  background: var(--color-bg);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius-md);
+  padding: 0.5rem 0;
+  display: none;
+  z-index: 10;
+}
+.user-profile.open .dropdown-menu {
+  display: block;
+}
+.dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 1rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  transition: background 0.15s, color 0.15s;
+}
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background: var(--color-bg-hover);
+  color: var(--color-accent);
+  outline: none;
+}
+/* Ensure dropdown menu shows when .open is present */
+.user-profile .dropdown-menu {
+  display: none;
+}
+.user-profile.open .dropdown-menu {
+  display: block;
+}
+/* Responsive tweaks if needed */
+@media (max-width: 600px) {
+  .dropdown-menu {
+    min-width: 120px;
+    right: 0;
+  }
+}
+.dropdown {
+  position: relative;
+}
+.dropdown-toggle {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: var(--color-dark);
+  padding: 0 4px;
+  display: flex;
+  align-items: center;
+  height: 34px;
+}
+.dropdown-toggle::after {
+  content: "";
+  display: inline-block;
+  margin-left: 4px;
+  border: solid var(--color-dark);
+  border-width: 0 2px 2px 0;
+  padding: 3px;
+  transform: rotate(45deg);
+}
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 120%;
+  right: 0;
+  min-width: 120px;
+  background: var(--color-white);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(33, 33, 33, 0.07);
+  z-index: 10;
+  flex-direction: column;
+  border: none;
+  padding: 6px 0;
+}
+.dropdown.open .dropdown-menu {
+  display: flex;
+}
+@media (max-width: 600px) {
+  .booking-container {
+    padding: 16px 6px;
+  }
+  .form-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

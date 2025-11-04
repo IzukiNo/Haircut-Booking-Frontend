@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Barbershop - Dashboard - Users</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/variables.css" />
+    <link rel="stylesheet" href="../css/pages/dashboard.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body class="dashboard-page users-page">
+    <div class="dashboard-layout">
+      <aside class="dashboard-sidebar"></aside>
+      <div class="main-wrapper">
+        <header class="dashboard-header">
+          <button class="sidebar-toggle" id="sidebar-toggle">☰</button>
+        </header>
+        <main class="dashboard-main">
+          <div class="main-header-controls">
+            <h1 class="main-title">Quản lý người dùng</h1>
+            <div class="action-group">
+              <div class="input-wrapper">
+                <input
+                  type="text"
+                  class="control-search"
+                  placeholder="Tìm theo tên/sđt"
+                />
+              </div>
+              <button class="btn-add-new">Thêm mới</button>
+            </div>
+          </div>
+          <div class="card table-card full-width">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Tên</th>
+                  <th>Vai trò</th>
+                  <th>Chi Nhánh</th>
+                  <th>Email</th>
+                  <th>SĐT</th>
+                  <th>Trạng thái</th>
+                  <th>Hành động</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <div class="pagination-bar" id="appointments-pagination">
+            <button
+              class="btn btn-outline"
+              id="appointments-prev"
+              disabled
+              onclick="handlePrev()"
+            >
+              Prev
+            </button>
+            <span id="page-info" page="1">Trang 1 / 1</span>
+            <button
+              class="btn btn-outline"
+              id="appointments-next"
+              disabled
+              onclick="handleNext()"
+            >
+              Next
+            </button>
+          </div>
+        </main>
+      </div>
+    </div>
+    <div id="edit-user-modal" class="modal-overlay" style="display: none">
+      <div class="modal-card">
+        <h2 class="modal-title">Chỉnh sửa người dùng</h2>
+        <form id="edit-user-form">
+          <div class="form-group">
+            <label for="edit-user-name">Tên</label>
+            <input type="text" id="edit-user-name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="edit-user-phone">SĐT</label>
+            <input type="text" id="edit-user-phone" name="phone" required />
+          </div>
+          <div class="form-group">
+            <label for="edit-user-role">Vai trò</label>
+            <select id="edit-user-role" name="role" required>
+              <option value="1">Thu Ngân</option>
+              <option value="2">Thợ Cắt Tóc</option>
+              <option value="3">Quản Lý</option>
+              <option value="4">Quản Trị Viên</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="edit-user-branch">Chi Nhánh</label>
+            <select id="edit-user-branch" name="branch" required>
+              <option value="">Đang tải...</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="edit-user-status">Trạng thái</label>
+            <select id="edit-user-status" name="status" required>
+              <option value="active">Hoạt động</option>
+              <option value="inactive">Ngừng</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Lịch làm việc</label>
+            <div class="schedule-container">
+              <div class="schedule-header">
+                <span>Lịch làm việc</span>
+                <button
+                  type="button"
+                  id="edit-add-schedule-btn"
+                  class="btn btn-outline"
+                  style="padding: 2px 10px; font-size: 18px"
+                >
+                  +
+                </button>
+              </div>
+              <div class="schedule-list" id="edit-schedule-list"></div>
+            </div>
+          </div>
+          <div class="modal-actions">
+            <button type="button" class="btn btn-outline" id="cancel-edit-user">
+              Hủy
+            </button>
+            <button type="submit" class="btn btn-dark">Lưu</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div id="create-user-modal" class="modal-overlay" style="display: none">
+      <div class="modal-card" style="max-width: 480px">
+        <h2 class="modal-title">Thêm nhân viên mới</h2>
+        <form id="create-user-form" autocomplete="off">
+          <div class="form-group">
+            <label for="create-user-email">Email</label>
+            <input type="email" id="create-user-email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="create-user-role">Vai trò</label>
+            <select id="create-user-role" name="role" required>
+              <option value="1">Thu Ngân</option>
+              <option value="2">Thợ Cắt Tóc</option>
+              <option value="3">Quản Lý</option>
+              <option value="4">Quản Trị Viên</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="create-user-branch">Chi Nhánh</label>
+            <select id="create-user-branch" name="branch" required>
+              <option value="">Đang tải...</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Lịch làm việc</label>
+            <div class="schedule-container">
+              <div class="schedule-header">
+                <span>Lịch làm việc</span>
+                <button
+                  type="button"
+                  id="add-schedule-btn"
+                  class="btn btn-outline"
+                  style="padding: 2px 10px; font-size: 18px"
+                >
+                  +
+                </button>
+              </div>
+              <div class="schedule-list" id="schedule-list"></div>
+            </div>
+          </div>
+          <div class="modal-actions">
+            <button
+              type="button"
+              class="btn btn-outline"
+              id="cancel-create-user"
+            >
+              Hủy
+            </button>
+            <button type="submit" class="btn btn-dark">Tạo mới</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- Popup thêm lịch làm việc -->
+    <div id="add-schedule-modal" class="modal-overlay" style="display: none">
+      <div class="modal-card" style="max-width: 340px">
+        <h2 class="modal-title">Thêm lịch làm việc</h2>
+        <form id="add-schedule-form" autocomplete="off">
+          <div class="form-group">
+            <label for="schedule-day">Thứ</label>
+            <select id="schedule-day" name="day" required>
+              <option value="monday">Thứ 2</option>
+              <option value="tuesday">Thứ 3</option>
+              <option value="wednesday">Thứ 4</option>
+              <option value="thursday">Thứ 5</option>
+              <option value="friday">Thứ 6</option>
+              <option value="saturday">Thứ 7</option>
+              <option value="sunday">Chủ nhật</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="schedule-start">Giờ bắt đầu</label>
+            <select id="schedule-start" name="startTime" required></select>
+          </div>
+          <div class="form-group">
+            <label for="schedule-end">Giờ kết thúc</label>
+            <select id="schedule-end" name="endTime" required></select>
+          </div>
+          <div class="modal-actions">
+            <button
+              type="button"
+              class="btn btn-outline"
+              id="cancel-add-schedule"
+            >
+              Hủy
+            </button>
+            <button type="submit" class="btn btn-dark">Thêm</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="js/userHandler.js"></script>
+    <script src="js/dashboard.js"></script>
+  </body>
+</html>

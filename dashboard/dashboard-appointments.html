@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Barbershop - Dashboard - Appointments</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/variables.css" />
+    <link rel="stylesheet" href="../css/pages/dashboard.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body class="dashboard-page appointments-page">
+    <div class="dashboard-layout">
+      <aside class="dashboard-sidebar"></aside>
+      <div class="main-wrapper">
+        <header class="dashboard-header">
+          <button class="sidebar-toggle" id="sidebar-toggle">☰</button>
+        </header>
+        <main class="dashboard-main">
+          <div class="main-header-controls">
+            <h1 class="main-title">Quản lý lịch hẹn</h1>
+            <div class="filter-buttons">
+              <button
+                class="filter-btn is-active"
+                onclick="setActiveFilter(this)"
+                data-filter="all"
+              >
+                Tất cả
+              </button>
+              <button
+                class="filter-btn"
+                onclick="setActiveFilter(this)"
+                data-filter="pending"
+              >
+                Chờ duyệt
+              </button>
+              <button
+                class="filter-btn"
+                onclick="setActiveFilter(this)"
+                data-filter="confirmed"
+              >
+                Đã xác nhận
+              </button>
+              <button
+                class="filter-btn"
+                onclick="setActiveFilter(this)"
+                data-filter="completed"
+              >
+                Hoàn thành
+              </button>
+              <button
+                class="filter-btn"
+                onclick="setActiveFilter(this)"
+                data-filter="canceled"
+              >
+                Đã hủy
+              </button>
+              <button class="btn-add-new" id="add-appointment">
+                Thêm lịch
+              </button>
+            </div>
+          </div>
+          <div class="card table-card full-width">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Khách</th>
+                  <th>Thợ</th>
+                  <th>Dịch vụ</th>
+                  <th>Thời gian đặt lịch</th>
+                  <th>Chi Nhánh</th>
+                  <th>Ngày tạo lịch</th>
+                  <th>Trạng thái</th>
+                  <th>Hành động</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <div class="pagination-bar" id="appointments-pagination">
+            <button
+              class="btn btn-outline"
+              id="appointments-prev"
+              disabled
+              onclick="handlePrev()"
+            >
+              Prev
+            </button>
+            <span id="page-info" page="1">Trang 1 / 1</span>
+            <button
+              class="btn btn-outline"
+              id="appointments-next"
+              disabled
+              onclick="handleNext()"
+            >
+              Next
+            </button>
+          </div>
+        </main>
+      </div>
+    </div>
+    <!-- Popup for adding new appointment -->
+    <div id="add-appointment-modal" class="modal-overlay" style="display: none">
+      <div class="modal-card">
+        <h2 class="modal-title">Thêm lịch hẹn mới</h2>
+        <form id="add-appointment-form">
+          <div class="form-group">
+            <label for="customer">Email Khách Hàng</label>
+            <input type="email" id="customer" name="customer" required />
+          </div>
+          <div class="form-group">
+            <label for="branch">Chi Nhánh</label>
+            <select id="branch" name="branch" required></select>
+          </div>
+          <div class="form-group">
+            <label for="barber">Thợ</label>
+            <select id="barber" name="barber" required></select>
+          </div>
+          <div class="form-group">
+            <label for="service">Dịch vụ</label>
+            <select id="service" name="service" required></select>
+          </div>
+          <div class="form-group">
+            <label for="date">Ngày</label>
+            <input type="date" id="date" name="date" required />
+          </div>
+          <div class="form-group">
+            <label for="time">Giờ</label>
+            <select id="time" name="time" required></select>
+          </div>
+          <div class="form-group">
+            <label for="note">Ghi chú</label>
+            <textarea
+              id="note"
+              name="note"
+              placeholder="Yêu cầu đặc biệt (nếu có)"
+            ></textarea>
+          </div>
+          <div class="modal-actions">
+            <button
+              type="button"
+              class="btn btn-outline"
+              id="cancel-add-appointment"
+            >
+              Hủy
+            </button>
+            <button type="submit" class="btn btn-dark">Thêm lịch</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- Popup chọn phương thức thanh toán -->
+    <div id="payment-method-modal" class="modal-overlay" style="display: none">
+      <div class="modal-card">
+        <h2 class="modal-title">Chọn phương thức thanh toán</h2>
+        <form id="payment-method-form">
+          <div class="form-group">
+            <label for="payment-method">Phương thức</label>
+            <select id="payment-method" name="paymentMethod" required>
+              <option value="cash">Tiền mặt</option>
+              <option value="bank_transfer">Chuyển Khoản</option>
+              <option value="momo">Ví MoMo</option>
+              <option value="zalo_pay">ZaloPay</option>
+            </select>
+          </div>
+          <div class="modal-actions">
+            <button
+              type="button"
+              class="btn btn-outline"
+              id="cancel-payment-method"
+            >
+              Hủy
+            </button>
+            <button type="submit" class="btn btn-dark">Xác nhận</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- Popup thêm dịch vụ vào lịch hẹn -->
+    <div id="add-service-modal" class="modal-overlay" style="display: none">
+      <div class="modal-card">
+        <h2 class="modal-title">Thêm dịch vụ cho lịch hẹn</h2>
+        <form id="add-service-form">
+          <div class="form-group">
+            <label>Dịch vụ</label>
+            <div id="service-checkbox-list" class="service-checkbox-list">
+              <!-- Checkbox dịch vụ sẽ render động bằng JS -->
+            </div>
+          </div>
+          <div class="modal-actions">
+            <button
+              type="button"
+              class="btn btn-dark"
+              id="save-service-btn"
+              style="display: none"
+            >
+              Lưu thay đổi
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="js/dashboard.js"></script>
+    <script src="js/appointmentHandler.js"></script>
+    <script></script>
+  </body>
+</html>

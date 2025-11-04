@@ -1,0 +1,10 @@
+:root {
+  --color-primary: #e9c664;
+  --color-dark: #212121;
+  --color-white: white;
+  --color-gray: #979799;
+  --color-black: black;
+  --font-heading: "Abril Fatface", serif;
+  --font-accent: "Bebas Neue", sans-serif;
+  --font-body: "Inter", sans-serif;
+}

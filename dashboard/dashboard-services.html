@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Barbershop - Dashboard - Services</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/variables.css" />
+    <link rel="stylesheet" href="../css/pages/dashboard.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body class="dashboard-page services-page">
+    <div class="dashboard-layout">
+      <aside class="dashboard-sidebar"></aside>
+      <div class="main-wrapper">
+        <header class="dashboard-header">
+          <button class="sidebar-toggle" id="sidebar-toggle">☰</button>
+        </header>
+        <main class="dashboard-main">
+          <div class="main-header-controls">
+            <h1 class="main-title">Quản lý dịch vụ</h1>
+            <div class="action-group">
+              <button class="btn-add-new">Thêm dịch vụ</button>
+            </div>
+          </div>
+          <div class="card table-card full-width">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Tên dịch vụ</th>
+                  <th>Giá</th>
+                  <th>Mô tả</th>
+                  <th>Trạng thái</th>
+                  <th>Hành động</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <div class="pagination-bar" id="appointments-pagination">
+            <button
+              class="btn btn-outline"
+              id="appointments-prev"
+              disabled
+              onclick="handlePrev()"
+            >
+              Prev
+            </button>
+            <span id="page-info" page="1">Trang 1 / 1</span>
+            <button
+              class="btn btn-outline"
+              id="appointments-next"
+              disabled
+              onclick="handleNext()"
+            >
+              Next
+            </button>
+          </div>
+        </main>
+      </div>
+    </div>
+    <!-- Popup for adding new service -->
+    <div id="add-service-modal" class="modal-overlay" style="display: none">
+      <div class="modal-card">
+        <h2 class="modal-title">Thêm dịch vụ mới</h2>
+        <form id="add-service-form">
+          <div class="form-group">
+            <label for="service-name">Tên dịch vụ</label>
+            <input type="text" id="service-name" name="service-name" required />
+          </div>
+          <div class="form-group">
+            <label for="service-price">Giá (1000 VNĐ)</label>
+            <input
+              type="number"
+              id="service-price"
+              name="service-price"
+              min="0"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="service-desc">Mô tả</label>
+            <textarea
+              id="service-desc"
+              name="service-desc"
+              rows="3"
+              placeholder="Mô tả dịch vụ"
+            ></textarea>
+          </div>
+          <div class="modal-actions">
+            <button
+              type="button"
+              class="btn btn-outline"
+              id="cancel-add-service"
+            >
+              Hủy
+            </button>
+            <button type="submit" class="btn btn-dark">Thêm dịch vụ</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- Popup for editing service -->
+    <div id="edit-service-modal" class="modal-overlay" style="display: none">
+      <div class="modal-card">
+        <h2 class="modal-title">Sửa dịch vụ</h2>
+        <form id="edit-service-form">
+          <div class="form-group">
+            <label for="edit-service-name">Tên dịch vụ</label>
+            <input
+              type="text"
+              id="edit-service-name"
+              name="edit-service-name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="edit-service-price">Giá (1000 VNĐ)</label>
+            <input
+              type="number"
+              id="edit-service-price"
+              name="edit-service-price"
+              min="0"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="edit-service-desc">Mô tả</label>
+            <textarea
+              id="edit-service-desc"
+              name="edit-service-desc"
+              rows="3"
+              placeholder="Mô tả dịch vụ"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="edit-service-status">Trạng thái</label>
+            <select
+              id="edit-service-status"
+              name="edit-service-status"
+              required
+            >
+              <option value="active">Bật</option>
+              <option value="inactive">Tắt</option>
+            </select>
+          </div>
+          <div class="modal-actions">
+            <button
+              type="button"
+              class="btn btn-outline"
+              id="cancel-edit-service"
+            >
+              Hủy
+            </button>
+            <button type="submit" class="btn btn-dark">Lưu thay đổi</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="js/serviceHandler.js"></script>
+    <script src="js/dashboard.js"></script>
+  </body>
+</html>

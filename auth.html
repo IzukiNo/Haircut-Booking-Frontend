@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BARBERSHOP - Login & Registration</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Abril+Fatface&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/pages/auth.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body class="auth-page">
+    <div class="auth-container" id="auth-container">
+      <div class="form-container sign-up-container">
+        <form id="register-form" action="">
+          <h1>Registration</h1>
+          <div class="input-field">
+            <div class="input-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </div>
+            <input
+              type="text"
+              placeholder="Username"
+              name="username"
+              required
+            />
+          </div>
+          <div class="input-field">
+            <div class="input-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                ></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </div>
+            <input type="email" placeholder="Email" name="email" required />
+          </div>
+          <div class="input-field">
+            <div class="input-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </div>
+            <input
+              type="password"
+              placeholder="Password"
+              name="password"
+              required
+            />
+          </div>
+          <button type="submit">Registration</button>
+          <span class="mobile-switch">
+            Already have an account?
+            <a href="#" id="signInMobile">Login</a>
+          </span>
+        </form>
+      </div>
+
+      <div class="form-container sign-in-container">
+        <form id="login-form">
+          <h1>Login</h1>
+          <div class="input-field">
+            <div class="input-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                ></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </div>
+            <input type="email" placeholder="Email" name="email" required />
+          </div>
+          <div class="input-field">
+            <div class="input-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </div>
+            <input
+              type="password"
+              placeholder="Password"
+              name="password"
+              required
+            />
+          </div>
+          <a href="" style="margin-bottom: 20px">Forgot your password?</a>
+          <button type="submit">Login</button>
+          <span class="mobile-switch">
+            Don't have an account?
+            <a href="#" id="signUpMobile">Registration</a>
+          </span>
+        </form>
+      </div>
+
+      <div class="overlay-container">
+        <div class="overlay">
+          <div class="overlay-panel overlay-left">
+            <h1 class="sidebar-title">Welcome Back!</h1>
+            <p class="sidebar-text">Already have an account?</p>
+            <button class="ghost" id="signIn">Login</button>
+          </div>
+          <div class="overlay-panel overlay-right">
+            <h1 class="sidebar-title">Hello, Welcome!</h1>
+            <p class="sidebar-text">Don’t have an account?</p>
+            <button class="ghost" id="signUp">Registration</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+  </body>
+</html>
