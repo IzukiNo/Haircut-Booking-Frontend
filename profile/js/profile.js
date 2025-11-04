@@ -10,7 +10,7 @@ async function getUserProfile() {
   }
 
   try {
-    const res = await fetch("http://localhost:3000/api/auth/me", {
+    const res = await fetch("/api/auth/me", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -128,7 +128,7 @@ async function changePassword(currentPassword, newPassword) {
   }
 
   try {
-    const res = await fetch("http://localhost:3000/api/users/me/password", {
+    const res = await fetch("/api/users/me/password", {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -333,7 +333,7 @@ async function updateUserProfile(updatedData) {
     return false;
   }
   try {
-    const res = await fetch("http://localhost:3000/api/users/me", {
+    const res = await fetch("/api/users/me", {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -452,16 +452,13 @@ async function handleAppointmentHistory(page = 1, limit = 5) {
         if (!confirmResult.isConfirmed) return;
         const token = localStorage.getItem("token");
         try {
-          const res = await fetch(
-            `http://localhost:3000/api/appointments/${appointmentId}/cancel`,
-            {
-              method: "PATCH",
-              headers: {
-                "Content-Type": "application/json",
-                Authorization: "Bearer " + token,
-              },
-            }
-          );
+          const res = await fetch(`/api/appointments/${appointmentId}/cancel`, {
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: "Bearer " + token,
+            },
+          });
           const data = await res.json();
           if (res.ok) {
             Swal.fire({
@@ -503,7 +500,7 @@ async function loadAppointmentHistory(page = 1, limit = 5) {
   }
   try {
     const res = await fetch(
-      `http://localhost:3000/api/appointments/me?status=all&limit=${limit}&page=${page}`,
+      `/api/appointments/me?status=all&limit=${limit}&page=${page}`,
       {
         method: "GET",
         headers: {

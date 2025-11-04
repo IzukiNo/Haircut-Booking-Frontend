@@ -46,7 +46,7 @@ function handleDeleteButton(userId) {
   }).then(async (result) => {
     if (!result.isConfirmed) return;
     try {
-      const res = await fetch(`http://localhost:3000/api/employees/${userId}`, {
+      const res = await fetch(`/api/employees/${userId}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -397,7 +397,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       };
       const token = localStorage.getItem("token");
       try {
-        const res = await fetch("http://localhost:3000/api/employees", {
+        const res = await fetch("/api/employees", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -500,7 +500,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
       const token = localStorage.getItem("token");
       try {
-        const res = await fetch(`http://localhost:3000/api/employees`, {
+        const res = await fetch(`/api/employees`, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",

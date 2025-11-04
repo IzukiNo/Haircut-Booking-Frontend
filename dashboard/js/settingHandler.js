@@ -17,7 +17,7 @@ async function updateBranchSetting(branchId, data) {
     return null;
   }
   try {
-    const res = await fetch(`http://localhost:3000/api/branches/${branchId}`, {
+    const res = await fetch(`/api/branches/${branchId}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
