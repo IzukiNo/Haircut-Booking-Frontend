@@ -5,9 +5,6 @@
     { "source": "/auth", "destination": "/auth.html" },
     { "source": "/contact", "destination": "/contact.html" },
     { "source": "/services", "destination": "/services.html" },
-    { "source": "/", "destination": "/index.html" },
-
-    { "source": "/dashboard", "destination": "/dashboard/index.html" },
     {
       "source": "/dashboard/users",
       "destination": "/dashboard/dashboard-users.html"
