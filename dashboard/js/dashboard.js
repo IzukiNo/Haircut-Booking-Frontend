@@ -27,7 +27,7 @@ perm.set(1, {
 perm.set(2, {
   nav: [
     {
-      href: "dashboard-appointments.html",
+      href: "appointments",
       icon: "calendar.svg",
       text: "Lịch hẹn",
     },
@@ -37,7 +37,7 @@ perm.set(3, {
   nav: [
     { href: "./", icon: "home.svg", text: "Tổng quan" },
     {
-      href: "dashboard-appointments.html",
+      href: "appointments",
       icon: "calendar.svg",
       text: "Lịch hẹn",
     },
@@ -46,14 +46,14 @@ perm.set(3, {
 perm.set(4, {
   nav: [
     { href: "./", icon: "home.svg", text: "Tổng quan" },
-    { href: "dashboard-users.html", icon: "user.svg", text: "Nhân Viên" },
+    { href: "users", icon: "user.svg", text: "Nhân Viên" },
     {
-      href: "dashboard-appointments.html",
+      href: "appointments",
       icon: "calendar.svg",
       text: "Lịch hẹn",
     },
-    { href: "dashboard-services.html", icon: "scissors.svg", text: "Dịch vụ" },
-    { href: "dashboard-settings.html", icon: "settings.svg", text: "Cài đặt" },
+    { href: "services", icon: "scissors.svg", text: "Dịch vụ" },
+    { href: "settings", icon: "settings.svg", text: "Cài đặt" },
   ],
 });
 

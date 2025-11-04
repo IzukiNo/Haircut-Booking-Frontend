@@ -20,6 +20,10 @@
     {
       "source": "/dashboard/services",
       "destination": "/dashboard/dashboard-services.html"
+    },
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/proxy.js"
     }
   ]
 }
