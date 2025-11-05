@@ -18,7 +18,7 @@ perm.set(1, {
   nav: [
     { href: "./", icon: "home.svg", text: "Tổng quan" },
     {
-      href: "dashboard-appointments.html",
+      href: "/dashboard/appointments",
       icon: "calendar.svg",
       text: "Lịch hẹn",
     },
@@ -27,7 +27,7 @@ perm.set(1, {
 perm.set(2, {
   nav: [
     {
-      href: "appointments",
+      href: "/dashboard/appointments",
       icon: "calendar.svg",
       text: "Lịch hẹn",
     },
@@ -37,7 +37,7 @@ perm.set(3, {
   nav: [
     { href: "./", icon: "home.svg", text: "Tổng quan" },
     {
-      href: "appointments",
+      href: "/dashboard/appointments",
       icon: "calendar.svg",
       text: "Lịch hẹn",
     },
@@ -46,14 +46,14 @@ perm.set(3, {
 perm.set(4, {
   nav: [
     { href: "./", icon: "home.svg", text: "Tổng quan" },
-    { href: "users", icon: "user.svg", text: "Nhân Viên" },
+    { href: "/dashboard/users", icon: "user.svg", text: "Nhân Viên" },
     {
-      href: "appointments",
+      href: "/dashboard/appointments",
       icon: "calendar.svg",
       text: "Lịch hẹn",
     },
-    { href: "services", icon: "scissors.svg", text: "Dịch vụ" },
-    { href: "settings", icon: "settings.svg", text: "Cài đặt" },
+    { href: "/dashboard/services", icon: "scissors.svg", text: "Dịch vụ" },
+    { href: "/dashboard/settings", icon: "settings.svg", text: "Cài đặt" },
   ],
 });
 
@@ -313,8 +313,8 @@ function renderUsersTable(data) {
       }</td>
       <td>
         <div class="table-actions">
-          <a href="#" class="btn-action">Sửa</a>
-          <a href="#" class="btn-action btn-delete">Xóa</a>
+          <a  class="btn-action">Sửa</a>
+          <a class="btn-action btn-delete">Xóa</a>
         </div>
       </td>
     </tr>
