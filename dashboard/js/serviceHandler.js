@@ -13,13 +13,16 @@ function handleDeleteButton(serviceId) {
   }).then(async (result) => {
     if (!result.isConfirmed) return;
     try {
-      const res = await fetch(`/api/services/${serviceId}`, {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: "Bearer " + token,
-        },
-      });
+      const res = await fetch(
+        `http://157.66.100.145:4000/api/services/${serviceId}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + token,
+          },
+        }
+      );
       const data = await res.json();
       if (res.ok) {
         Swal.fire({
@@ -98,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const priceValue = Math.round(Number(price) * 1000);
       const token = localStorage.getItem("token");
       try {
-        const res = await fetch("/api/services", {
+        const res = await fetch("http://157.66.100.145:4000/api/services", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -177,19 +180,22 @@ document.addEventListener("DOMContentLoaded", function () {
       const priceValue = Math.round(Number(price) * 1000);
       const token = localStorage.getItem("token");
       try {
-        const res = await fetch(`/api/services/${serviceId}`, {
-          method: "PATCH",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: "Bearer " + token,
-          },
-          body: JSON.stringify({
-            name,
-            price: priceValue,
-            description: desc,
-            status,
-          }),
-        });
+        const res = await fetch(
+          `http://157.66.100.145:4000/api/services/${serviceId}`,
+          {
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: "Bearer " + token,
+            },
+            body: JSON.stringify({
+              name,
+              price: priceValue,
+              description: desc,
+              status,
+            }),
+          }
+        );
         const data = await res.json();
         if (res.ok) {
           Swal.fire({

@@ -8,7 +8,7 @@ async function getUserProfile() {
   }
 
   try {
-    const res = await fetch("/api/auth/me", {
+    const res = await fetch("http://157.66.100.145:4000/api/auth/me", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -35,7 +35,7 @@ async function getServiceList() {
     return null;
   }
   try {
-    const res = await fetch("/api/services", {
+    const res = await fetch("http://157.66.100.145:4000/api/services", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -62,7 +62,7 @@ async function getBranchList() {
     return null;
   }
   try {
-    const res = await fetch("/api/branches", {
+    const res = await fetch("http://157.66.100.145:4000/api/branches", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -89,13 +89,16 @@ async function getStylistListByBranch(branchId) {
     return null;
   }
   try {
-    const res = await fetch(`/api/stylists?branchId=${branchId}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + token,
-      },
-    });
+    const res = await fetch(
+      `http://157.66.100.145:4000/api/stylists?branchId=${branchId}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + token,
+        },
+      }
+    );
     const data = await res.json();
     if (res.ok) {
       return data.data;
@@ -117,7 +120,7 @@ async function bookingAppointment(appointmentData) {
   }
 
   try {
-    const res = await fetch("/api/appointments", {
+    const res = await fetch("http://157.66.100.145:4000/api/appointments", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -15,10 +15,10 @@ if (appointmentId && paymentType) {
 
 const qrImages = {
   bank_transfer:
-    "https://api.qrserver.com/v1/create-qr-code/?data=bank_transfer_demo&size=160x160",
-  momo: "https://api.qrserver.com/v1/create-qr-code/?data=momo_demo&size=160x160",
+    "https:/http://157.66.100.145:4000/api.qrserver.com/v1/create-qr-code/?data=bank_transfer_demo&size=160x160",
+  momo: "https:/http://157.66.100.145:4000/api.qrserver.com/v1/create-qr-code/?data=momo_demo&size=160x160",
   zalo_pay:
-    "https://api.qrserver.com/v1/create-qr-code/?data=zalo_pay_demo&size=160x160",
+    "https:/http://157.66.100.145:4000/api.qrserver.com/v1/create-qr-code/?data=zalo_pay_demo&size=160x160",
 };
 const reviewExamples = [
   "Dịch vụ rất tốt!",
@@ -136,14 +136,17 @@ function renderReview() {
 async function createTransaction(appointmentId, cashierId, paymentMethod) {
   const token = localStorage.getItem("token");
   try {
-    const res = await fetch("http://localhost:3000/api/transactions", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + token,
-      },
-      body: JSON.stringify({ appointmentId, cashierId, paymentMethod }),
-    });
+    const res = await fetch(
+      "http://localhost:3000http://157.66.100.145:4000/api/transactions",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + token,
+        },
+        body: JSON.stringify({ appointmentId, cashierId, paymentMethod }),
+      }
+    );
     const data = await res.json();
 
     if (res.ok) {
@@ -211,7 +214,8 @@ async function submitReview(rating, comment, appointmentId) {
   const token = localStorage.getItem("token");
   try {
     const res = await fetch(
-      "http://localhost:3000/api/reviews/" + appointmentId,
+      "http://localhost:3000http://157.66.100.145:4000/api/reviews/" +
+        appointmentId,
       {
         method: "POST",
         headers: {
@@ -242,7 +246,8 @@ async function submitPayment(appointmentId) {
   const token = localStorage.getItem("token");
   try {
     const res = await fetch(
-      "http://localhost:3000/api/transactions/" + appointmentId,
+      "http://localhost:3000http://157.66.100.145:4000/api/transactions/" +
+        appointmentId,
       {
         method: "PATCH",
         headers: {

@@ -46,14 +46,17 @@ function handleDeleteButton(userId) {
   }).then(async (result) => {
     if (!result.isConfirmed) return;
     try {
-      const res = await fetch(`/api/employees/${userId}`, {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: "Bearer " + token,
-        },
-        body: JSON.stringify({ role: roles[cacheEmployees[userId].role] }),
-      });
+      const res = await fetch(
+        `http://157.66.100.145:4000/api/employees/${userId}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + token,
+          },
+          body: JSON.stringify({ role: roles[cacheEmployees[userId].role] }),
+        }
+      );
       const data = await res.json();
       if (res.ok) {
         Swal.fire({
@@ -397,7 +400,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       };
       const token = localStorage.getItem("token");
       try {
-        const res = await fetch("/api/employees", {
+        const res = await fetch("http://157.66.100.145:4000/api/employees", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -500,7 +503,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
       const token = localStorage.getItem("token");
       try {
-        const res = await fetch(`/api/employees`, {
+        const res = await fetch(`http://157.66.100.145:4000/api/employees`, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",

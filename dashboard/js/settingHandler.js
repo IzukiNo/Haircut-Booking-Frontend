@@ -17,14 +17,17 @@ async function updateBranchSetting(branchId, data) {
     return null;
   }
   try {
-    const res = await fetch(`/api/branches/${branchId}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + token,
-      },
-      body: JSON.stringify(data),
-    });
+    const res = await fetch(
+      `http://157.66.100.145:4000/api/branches/${branchId}`,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + token,
+        },
+        body: JSON.stringify(data),
+      }
+    );
     const result = await res.json();
     if (res.ok) {
       return result.data;

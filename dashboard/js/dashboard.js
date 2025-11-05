@@ -64,7 +64,7 @@ async function getBranchList() {
     return null;
   }
   try {
-    const res = await fetch("/api/branches", {
+    const res = await fetch("http://157.66.100.145:4000/api/branches", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -100,7 +100,7 @@ async function getUserProfile() {
   }
 
   try {
-    const res = await fetch("/api/auth/me", {
+    const res = await fetch("http://157.66.100.145:4000/api/auth/me", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -135,13 +135,16 @@ async function getServiceList(page = 1, limit = 10) {
     return null;
   }
   try {
-    const res = await fetch(`/api/services?page=${page}&limit=${limit}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + token,
-      },
-    });
+    const res = await fetch(
+      `http://157.66.100.145:4000/api/services?page=${page}&limit=${limit}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + token,
+        },
+      }
+    );
     const data = await res.json();
     if (res.ok) {
       cacheServices = {};
@@ -166,13 +169,16 @@ async function getEmployeesList(page = 1, limit = 10) {
     return null;
   }
   try {
-    const res = await fetch(`/api/employees?page=${page}&limit=${limit}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + token,
-      },
-    });
+    const res = await fetch(
+      `http://157.66.100.145:4000/api/employees?page=${page}&limit=${limit}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + token,
+        },
+      }
+    );
     const data = await res.json();
     if (res.ok) {
       cacheEmployees = {};
@@ -198,7 +204,7 @@ async function getAppointmentsList(page = 1, limit = 10, status = "all") {
   }
   try {
     const res = await fetch(
-      `/api/appointments?status=${status}&limit=${limit}&page=${page}`,
+      `http://157.66.100.145:4000/api/appointments?status=${status}&limit=${limit}&page=${page}`,
       {
         method: "GET",
         headers: {
