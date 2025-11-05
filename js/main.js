@@ -57,12 +57,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // 3. ACTIVE LINK LOGIC
-    const currentPath =
-      window.location.pathname.split("/").pop() || "index.html";
+    let currentPath = window.location.pathname;
+    if (currentPath === "/" || currentPath === "") {
+      currentPath = "/";
+    }
     document
       .querySelectorAll(".main-header .nav-link, .mobile-nav .nav-link")
       .forEach((link) => {
-        const linkPath = link.getAttribute("href").split("/").pop();
+        let linkPath = link.getAttribute("href");
+
+        if (linkPath === "/" || linkPath === "") {
+          linkPath = "/";
+        }
         if (linkPath === currentPath) {
           link.classList.add("active");
         }
