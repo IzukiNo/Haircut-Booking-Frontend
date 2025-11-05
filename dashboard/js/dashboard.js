@@ -632,7 +632,7 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", () => {
   const userProfile = getUserProfile();
   if (!userProfile) {
-    window.location.href = "/";
+    window.location.href = "/profile";
   }
   const page = getDashboardType();
   switch (page) {
