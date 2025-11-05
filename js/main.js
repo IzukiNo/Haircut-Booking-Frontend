@@ -22,13 +22,23 @@ document.addEventListener("DOMContentLoaded", () => {
     // 1. HAMBURGER MENU LOGIC
     const hamburgerBtn = document.getElementById("hamburger-btn");
     const mobileNav = document.getElementById("mobile-nav");
+    const mobileNavClose = document.getElementById("mobile-nav-close");
 
     if (hamburgerBtn && mobileNav) {
       hamburgerBtn.addEventListener("click", () => {
         hamburgerBtn.classList.toggle("is-active");
         mobileNav.classList.toggle("is-active"); // Sử dụng class thay vì style
       });
-    } // 2. STICKY HEADER LOGIC (IMPROVED - WITH THROTTLING)
+    }
+    // Handle close button for mobile nav
+    if (mobileNavClose && mobileNav && hamburgerBtn) {
+      mobileNavClose.addEventListener("click", () => {
+        mobileNav.classList.remove("is-active");
+        hamburgerBtn.classList.remove("is-active");
+      });
+    }
+
+    // 2. STICKY HEADER LOGIC (IMPROVED - WITH THROTTLING)
     const mainHeader = document.getElementById("main-header");
     if (mainHeader) {
       let ticking = false;

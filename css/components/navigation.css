@@ -139,7 +139,7 @@
 
   .main-header {
     display: flex;
-    justify-content: flex-start;    
+    justify-content: flex-start;
     padding: 20px 0;
   }
 
@@ -175,18 +175,37 @@
   }
 }
 .mobile-nav-actions {
-    display: flex;
-    flex-direction: column; /* Xếp các nút theo chiều dọc */
-    gap: 15px;              /* Tạo khoảng cách giữa các nút */
-    margin-top: 30px;       /* Tạo khoảng cách với các link ở trên */
-    padding-top: 30px;      /* Thêm một đường kẻ ngang để phân tách */
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    width: 80%;
-    max-width: 250px;       /* Giới hạn chiều rộng của các nút */
-    align-items: center;    /* Căn giữa các nút */
+  display: flex;
+  flex-direction: column; /* Xếp các nút theo chiều dọc */
+  gap: 15px; /* Tạo khoảng cách giữa các nút */
+  margin-top: 30px; /* Tạo khoảng cách với các link ở trên */
+  padding-top: 30px; /* Thêm một đường kẻ ngang để phân tách */
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  width: 80%;
+  max-width: 250px; /* Giới hạn chiều rộng của các nút */
+  align-items: center; /* Căn giữa các nút */
 }
 
 /* Đảm bảo các nút chiếm toàn bộ chiều rộng có thể */
 .mobile-nav-actions .btn {
-    width: 100%;
+  width: 100%;
+}
+
+.mobile-nav-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  background: none;
+  border: none;
+  color: var(--color-gray);
+  font-size: 32px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1100;
+  transition: color 0.2s;
+}
+.mobile-nav-close:hover {
+  color: var(--color-primary);
 }
