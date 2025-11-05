@@ -255,7 +255,6 @@ function renderAppointmentsTable(data) {
                                 item.statusClass === "pending"
                                   ? `
                                     <a class="btn-action btn-approve">Duyệt</a>
-                                    <a class="btn-action btn-cancel">Hủy</a>
                                   `
                                   : ""
                               }

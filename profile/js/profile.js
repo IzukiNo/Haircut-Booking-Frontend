@@ -424,7 +424,7 @@ async function handleAppointmentHistory(page = 1, limit = 5) {
     historyContainer.innerHTML = "";
     historyData.appointments.forEach((item) => {
       const historyItem = createHistoryItem(
-        item.serviceId.name,
+        item.serviceId[0].name,
         item.date,
         item.time,
         item.status,
