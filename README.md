@@ -1,244 +1,365 @@
-# 💈 Barbershop Booking System - Frontend
+# 💈 BARBERSHOP - Haircut Booking System
 
-A modern, responsive web application for a barbershop booking system built with vanilla HTML, CSS, and JavaScript. This frontend provides a complete user interface for customers to book appointments and for administrators to manage the barbershop operations.
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Vercel](https://img.shields.io/badge/deployed-Vercel-black.svg)](https://vercel.com)
+
+A modern, full-featured barbershop booking system frontend with elegant UI/UX design. This web application allows customers to book haircut appointments, manage their profiles, and enables staff to manage services, appointments, and customer information.
 
 ## 🌟 Features
 
-### 🏠 **Customer Features**
+### 👥 Customer Features
 
-- **Landing Page** - Elegant homepage showcasing services and shop statistics
-- **Service Catalog** - Detailed view of all available barbershop services
-- **About Us** - Information about the barbershop and its story
-- **Contact Page** - Contact form and shop location information
-- **User Authentication** - Login and registration with animated forms
-- **Customer Profile** - Personal profile management with booking history
-- **Responsive Design** - Fully responsive across all devices
+- **User Authentication**: Secure login and registration system
+- **Profile Management**: View and update personal information, track loyalty points
+- **Service Booking**:
+  - Browse available services (Haircut, Beard, Facial, Mustache)
+  - Select preferred barber
+  - Choose appointment date and time
+  - View booking history
+- **Appointment Management**: View, modify, and cancel appointments
+- **Payment Integration**: QR code payment support
+- **Service Review**: Rate and review services after completion
 
-### 👨‍💼 **Admin Dashboard**
+### 👨‍💼 Staff/Admin Features
 
-- **Overview Dashboard** - Key metrics and statistics
-- **User Management** - Manage customer and staff accounts
-- **Appointment Management** - View, filter, and manage all bookings
-- **Service Management** - Add, edit, and manage barbershop services
-- **Settings Panel** - System configuration and preferences
-- **Barber Profiles** - Individual barber profile management
+- **Dashboard Overview**: Real-time statistics and analytics
+  - Daily revenue tracking
+  - Appointment metrics
+  - Customer retention rate
+  - Average ratings
+- **Appointment Management**:
+  - View all appointments
+  - Filter by status (pending, confirmed, completed, cancelled)
+  - Update appointment status
+  - Process payments
+- **Service Management**: Add, edit, and delete services
+- **User Management**: Manage staff and customer accounts
+- **Role-based Access Control**: Different permissions for Admin, Staff, Stylist, and Cashier
 
-### 🎨 **Design & UX**
+### 🎨 Design Features
 
-- **Modern UI/UX** - Clean, professional barbershop aesthetic
-- **Component Architecture** - Modular HTML components for maintainability
-- **Smooth Animations** - CSS transitions and hover effects
-- **Mobile Navigation** - Hamburger menu for mobile devices
-- **Sticky Header** - Navigation that stays accessible while scrolling
+- **Responsive Design**: Mobile-first approach, works on all devices
+- **Modern UI**: Clean and professional design with smooth animations
+- **Component-based Architecture**: Reusable components (header, footer, navigation)
+- **Sticky Navigation**: Easy access to navigation on scroll
+- **Interactive Elements**: Hamburger menu, dropdowns, modals
+- **Custom Icons**: SVG assets for services and dashboard
 
-## 🛠️ Technologies Used
-
-- **HTML5** - Semantic markup structure
-- **CSS3** - Modern styling with custom properties and flexbox/grid
-- **Vanilla JavaScript** - Interactive functionality without frameworks
-- **Component System** - Reusable HTML components loaded dynamically
-- **Google Fonts** - Typography with Abril Fatface, Bebas Neue, and Inter
-
-## 📁 Project Structure
+## 🏗️ Project Structure
 
 ```
-barber-shop/
-├── 📄 HTML Pages
-│   ├── index.html              # Homepage
-│   ├── services.html           # Service catalog
-│   ├── about.html              # About page
-│   ├── contact.html            # Contact page
-│   ├── auth.html               # Login/Registration
-│   ├── profile-customer.html   # Customer profile
-│   ├── profile-barber.html     # Barber profile
-│   └── dashboard-*.html        # Admin dashboard pages
-│
-├── 🎨 Styling
+Haircut-Booking-Frontend/
+├── index.html              # Landing page
+├── about.html              # About us page
+├── services.html           # Services showcase
+├── contact.html            # Contact form
+├── auth.html               # Login/Registration
+├── assets/                 # Images and icons
+│   ├── dashboard/          # Dashboard icons
+│   ├── landing/            # Landing page images
+│   └── profile/            # Profile assets
+├── booking/                # Booking module
+│   ├── index.html
+│   ├── booking.js
+│   ├── booking.css
+│   └── dropdown.js
+├── css/                    # Stylesheets
+│   ├── base.css            # Base styles
+│   ├── reset.css           # CSS reset
+│   ├── variables.css       # CSS variables
+│   ├── components/         # Component styles
+│   │   ├── banner.css
+│   │   ├── cards.css
+│   │   ├── counter.css
+│   │   ├── footer.css
+│   │   ├── forms.css
+│   │   ├── hero.css
+│   │   ├── navigation.css
+│   │   └── testimonials.css
+│   └── pages/              # Page-specific styles
+│       ├── about.css
+│       ├── auth.css
+│       ├── contact.css
+│       ├── dashboard.css
+│       ├── home.css
+│       └── services.css
+├── dashboard/              # Admin dashboard
+│   ├── index.html
+│   ├── dashboard-appointments.html
+│   ├── dashboard-services.html
+│   ├── dashboard-settings.html
+│   ├── dashboard-users.html
+│   └── js/
+│       ├── dashboard.js
+│       ├── appointmentHandler.js
+│       ├── serviceHandler.js
+│       ├── settingHandler.js
+│       └── userHandler.js
+├── html-components/        # Reusable components
+│   ├── footer.html
+│   ├── header.html
+│   ├── mobile-nav.html
+│   ├── promo-banner.html
+│   └── testimonials.html
+├── js/                     # JavaScript files
+│   ├── main.js             # Main application logic
+│   └── auth.js             # Authentication logic
+├── payment/                # Payment module
+│   ├── index.html
+│   ├── payment.js
+│   └── payment.css
+├── profile/                # Customer profile
+│   ├── index.html
 │   ├── css/
-│   │   ├── reset.css           # CSS reset
-│   │   ├── variables.css       # CSS custom properties
-│   │   ├── base.css            # Base styles
-│   │   ├── components/         # Component-specific styles
-│   │   └── pages/              # Page-specific styles
-│
-├── 🧩 Components
-│   ├── html-components/
-│   │   ├── header.html         # Navigation header
-│   │   ├── footer.html         # Site footer
-│   │   ├── mobile-nav.html     # Mobile navigation
-│   │   ├── testimonials.html   # Customer testimonials
-│   │   └── promo-banner.html   # Promotional banner
-│
-├── ⚡ JavaScript
-│   ├── js/
-│   │   ├── main.js             # Main application logic
-│   │   ├── auth.js             # Authentication handling
-│   │   ├── dashboard.js        # Dashboard functionality
-│   │   └── profile.js          # Profile management
-│
-└── 🖼️ Assets
-    └── assets/                 # SVG icons and graphics
+│   │   └── profile.css
+│   └── js/
+│       └── profile.js
+└── vercel.json             # Vercel deployment config
 ```
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
-- A modern web browser (Chrome, Firefox, Safari, Edge)
-- A local web server (recommended for proper functionality)
+- Modern web browser (Chrome, Firefox, Safari, Edge)
+- Web server (for local development)
+- Internet connection (for CDN resources and API calls)
 
 ### Installation
 
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/your-username/Haircut-Booking-Frontend.git
-   cd Haircut-Booking-Frontend
+   git clone https://github.com/IzukiNo/haircut-booking-frontend.git
+   cd haircut-booking-frontend
    ```
 
-2. **Navigate to the project directory**
+2. **Serve the application**
+
+   Using Python:
 
    ```bash
-   cd barber-shop
-   ```
-
-3. **Start a local server**
-
-   **Option 1: Using Python**
-
-   ```bash
-   # Python 3
    python -m http.server 8000
-
-   # Python 2
-   python -S SimpleHTTPServer 8000
    ```
 
-   **Option 2: Using Node.js (with live-server)**
+   Using Node.js (http-server):
 
    ```bash
-   npm install -g live-server
-   live-server
+   npx http-server -p 8000
    ```
 
-   **Option 3: Using PHP**
+   Using VS Code Live Server:
 
-   ```bash
-   php -S localhost:8000
+   - Install Live Server extension
+   - Right-click on `index.html` and select "Open with Live Server"
+
+3. **Open in browser**
+   ```
+   http://localhost:8000
    ```
 
-4. **Open your browser**
-   Navigate to `http://localhost:8000` to view the application
+## 🔧 Configuration
+
+### API Integration
+
+The application connects to a backend API at `https://api.izukino.tech/api`.
+
+Key API endpoints:
+
+- Authentication: `/auth/login`, `/auth/register`, `/auth/me`
+- Services: `/services`
+- Appointments: `/appointments`
+- Users: `/users`
+- Payments: `/payments`
+
+To change the API base URL, update the fetch calls in:
+
+- `js/auth.js`
+- `booking/booking.js`
+- `dashboard/js/*.js`
+- `profile/js/profile.js`
+
+### Environment Variables
+
+No environment variables are required for the frontend. All configurations are in the JavaScript files.
 
 ## 📱 Pages Overview
 
-### 🏠 **Homepage (`index.html`)**
+### Public Pages
 
-- Hero section with barbershop branding
-- Services preview with cards
-- Statistics counter (2500 shaves, 4500 haircuts, 9 open shops)
-- Customer testimonials
-- Promotional banner
+- **Home (`index.html`)**: Landing page with hero section, services preview, stats counter, and testimonials
+- **About (`about.html`)**: Company information and team introduction
+- **Services (`services.html`)**: Detailed service catalog with pricing
+- **Contact (`contact.html`)**: Contact form and location information
+- **Auth (`auth.html`)**: Login and registration forms
 
-### ✂️ **Services (`services.html`)**
+### Protected Pages (Require Authentication)
 
-- Complete service catalog with pricing
-- Detailed service descriptions
-- Professional service imagery
-- Booking call-to-action buttons
+- **Booking (`/booking`)**: Book new appointments
+- **Profile (`/profile`)**: Customer profile and appointment history
+- **Dashboard (`/dashboard`)**: Admin/Staff dashboard with analytics
+- **Payment (`/payment`)**: Payment processing and review system
 
-### ℹ️ **About (`about.html`)**
+## 🎨 Styling
 
-- Barbershop history and story
-- Team information
-- Mission and values
-- Professional imagery
+The project uses a modern CSS architecture:
 
-### 📞 **Contact (`contact.html`)**
+- **CSS Variables**: Centralized color scheme and spacing in `css/variables.css`
+- **Component-based**: Reusable component styles
+- **Responsive**: Mobile-first design with breakpoints
+- **Custom Fonts**:
+  - Abril Fatface (headings)
+  - Bebas Neue (titles)
+  - Inter (body text)
+  - Quicksand (special elements)
 
-- Contact form for inquiries
-- Shop location and hours
-- Contact information
-- Interactive elements
+### Color Scheme
 
-### 🔐 **Authentication (`auth.html`)**
+- Primary: `#d4af37` (Gold)
+- Text Dark: `#1a1a1a`
+- Text Light: `#ffffff`
+- Background: Various shades of dark grays
 
-- Animated login/registration forms
-- Form validation
-- Responsive design
-- Social login options (UI ready)
+## 🔐 Authentication & Security
 
-### 👤 **Profiles**
+- JWT token-based authentication
+- Token stored in `localStorage`
+- Protected routes redirect to auth page if not logged in
+- Role-based access control for dashboard features
+- Secure API communication over HTTPS
 
-- **Customer Profile**: Booking history, loyalty points, account management
-- **Barber Profile**: Schedule management, service specializations, statistics
+## 📦 Dependencies
 
-### 📊 **Admin Dashboard**
+### External Libraries
 
-- **Main Dashboard**: Overview statistics and quick actions
-- **Appointments**: Filter and manage all bookings (pending, confirmed, completed, cancelled)
-- **Users**: Manage customer and staff accounts
-- **Services**: Add/edit services with pricing and duration
-- **Settings**: System configuration
+- **SweetAlert2** (`v11`): Beautiful alert and modal dialogs
+- **Google Fonts**: Typography
+- **jsDelivr CDN**: Image hosting
 
-## 🎨 Design System
+### Browser APIs Used
 
-### Color Palette
+- Fetch API: HTTP requests
+- LocalStorage: Token and data persistence
+- DOM API: Dynamic content manipulation
 
-- **Primary**: `#E9C664` (Golden yellow)
-- **Dark**: `#212121` (Charcoal)
-- **White**: `#FFFFFF`
-- **Gray**: `#979799`
-- **Black**: `#000000`
+## 🌐 Deployment
 
-### Typography
+### Vercel (Recommended)
 
-- **Headings**: Abril Fatface (serif)
-- **Accent Text**: Bebas Neue (sans-serif)
-- **Body Text**: Inter (sans-serif)
+The project is configured for Vercel deployment with `vercel.json`:
 
-### Components
+1. Install Vercel CLI:
 
-- Modular CSS architecture
-- Reusable component classes
-- Consistent spacing and typography
-- Hover states and transitions
+   ```bash
+   npm i -g vercel
+   ```
 
-## 🔧 JavaScript Functionality
+2. Deploy:
+   ```bash
+   vercel
+   ```
 
-### Core Features
+### Manual Deployment
 
-- **Component Loading**: Dynamic HTML component injection
-- **Navigation**: Sticky header and mobile hamburger menu
-- **Authentication**: Form switching animations
-- **Dashboard**: Sidebar toggle and filtering
-- **Profile Management**: Tab switching and form handling
+Simply upload all files to any static hosting service:
 
-### Key Scripts
+- GitHub Pages
+- Netlify
+- Firebase Hosting
+- AWS S3 + CloudFront
 
-- `main.js`: Core application logic and component loading
-- `auth.js`: Authentication form interactions
-- `dashboard.js`: Admin dashboard functionality
-- `profile.js`: User profile management
+## 🧪 Features in Detail
 
-## 📱 Responsive Design
+### Component Loading System
 
-- **Mobile First**: Optimized for mobile devices
-- **Tablet Support**: Medium screen adaptations
-- **Desktop**: Full-featured desktop experience
-- **Touch Friendly**: Large tap targets and gestures
+The application uses a custom component loader (`main.js`) to dynamically load reusable HTML components:
 
-## 🌐 Browser Support
+```javascript
+const loadComponents = async () => {
+  const components = document.querySelectorAll("[data-component]");
+  // Loads header, footer, mobile-nav, etc.
+};
+```
 
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Mobile browsers (iOS Safari, Chrome Mobile)
+### Sticky Header
+
+Implements performant scroll handling with `requestAnimationFrame`:
+
+```javascript
+const requestTick = () => {
+  if (!ticking) {
+    requestAnimationFrame(updateHeader);
+    ticking = true;
+  }
+};
+```
+
+### Active Navigation Links
+
+Automatically highlights current page in navigation menu.
+
+### Appointment Booking Flow
+
+1. Select barber
+2. Choose service
+3. Pick date and time
+4. Add notes (optional)
+5. Confirm booking
+6. Receive confirmation
+
+### Payment Flow
+
+1. View appointment details
+2. Confirm payment amount
+3. Scan QR code or pay cash
+4. Leave review
+5. Receive thank you message
+
+## 👥 User Roles
+
+| Role         | Permissions                                           |
+| ------------ | ----------------------------------------------------- |
+| **Customer** | Book appointments, view profile, manage bookings      |
+| **Cashier**  | View dashboard, manage appointments, process payments |
+| **Stylist**  | View assigned appointments                            |
+| **Staff**    | View dashboard, manage appointments                   |
+| **Admin**    | Full access to all features                           |
+
+## 📝 Best Practices
+
+- All JavaScript uses async/await for API calls
+- Error handling with try-catch blocks
+- User feedback with SweetAlert2
+- Clean code with comments
+- Semantic HTML structure
+- Accessible form elements
+- Optimized images via CDN
+
+## 🐛 Known Issues & Limitations
+
+- No offline functionality (requires internet for API)
+- Limited error recovery for network issues
+- No real-time updates (requires manual refresh)
+- Payment integration is demonstration only (not production-ready)
+
+## 🔮 Future Enhancements
+
+- [ ] Real-time appointment updates with WebSocket
+- [ ] PWA support for offline functionality
+- [ ] Multi-language support (i18n)
+- [ ] Email notifications
+- [ ] SMS reminders
+- [ ] Google Calendar integration
+- [ ] Advanced analytics dashboard
+- [ ] Customer loyalty program expansion
+- [ ] Online payment gateway integration (Stripe, PayPal)
+- [ ] Photo gallery for completed work
 
 ## 🤝 Contributing
 
-1. Fork the repository
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the project
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
@@ -248,17 +369,16 @@ barber-shop/
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 👨‍💻 Author
+## 📧 Contact
 
-**IzukiNo**
-
-- GitHub: [@IzukiNo](https://github.com/IzukiNo)
+Project Link: [https://github.com/IzukiNo/haircut-booking-frontend](https://github.com/IzukiNo/haircut-booking-frontend)
 
 ## 🙏 Acknowledgments
 
-- Icons and graphics from custom SVG designs
-- Images hosted via CDN for optimal performance
+- Design inspiration from modern barbershop websites
+- Icons from custom SVG assets
+- Images from jsDelivr CDN
+- SweetAlert2 for beautiful alerts
 - Google Fonts for typography
-- Modern CSS techniques for animations and layouts
 
 ---
