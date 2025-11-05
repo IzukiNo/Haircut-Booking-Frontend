@@ -10,7 +10,7 @@ async function getUserProfile() {
   }
 
   try {
-    const res = await fetch("http://157.66.100.145:4000/api/auth/me", {
+    const res = await fetch("https://api.izukino.tech/api/auth/me", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -128,17 +128,14 @@ async function changePassword(currentPassword, newPassword) {
   }
 
   try {
-    const res = await fetch(
-      "http://157.66.100.145:4000/api/users/me/password",
-      {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: "Bearer " + token,
-        },
-        body: JSON.stringify({ currentPassword, newPassword }),
-      }
-    );
+    const res = await fetch("https://api.izukino.tech/api/users/me/password", {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + token,
+      },
+      body: JSON.stringify({ currentPassword, newPassword }),
+    });
     const data = await res.json();
     if (res.ok) {
       return true;
@@ -336,7 +333,7 @@ async function updateUserProfile(updatedData) {
     return false;
   }
   try {
-    const res = await fetch("http://157.66.100.145:4000/api/users/me", {
+    const res = await fetch("https://api.izukino.tech/api/users/me", {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -456,7 +453,7 @@ async function handleAppointmentHistory(page = 1, limit = 5) {
         const token = localStorage.getItem("token");
         try {
           const res = await fetch(
-            `http://157.66.100.145:4000/api/appointments/${appointmentId}/cancel`,
+            `https://api.izukino.tech/api/appointments/${appointmentId}/cancel`,
             {
               method: "PATCH",
               headers: {
@@ -506,7 +503,7 @@ async function loadAppointmentHistory(page = 1, limit = 5) {
   }
   try {
     const res = await fetch(
-      `http://157.66.100.145:4000/api/appointments/me?status=all&limit=${limit}&page=${page}`,
+      `https://api.izukino.tech/api/appointments/me?status=all&limit=${limit}&page=${page}`,
       {
         method: "GET",
         headers: {
