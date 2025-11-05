@@ -65,7 +65,7 @@ async function getServiceList() {
     return null;
   }
   try {
-    const res = await fetch("api/services", {
+    const res = await fetch("https://api.izukino.tech/api/services", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -92,7 +92,7 @@ async function getBranchList() {
     return null;
   }
   try {
-    const res = await fetch("api/branches", {
+    const res = await fetch("https://api.izukino.tech/api/branches", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -120,13 +120,16 @@ async function getStylistListByBranch(branchId) {
     return null;
   }
   try {
-    const res = await fetch(`api/stylists?branchId=${branchId}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + token,
-      },
-    });
+    const res = await fetch(
+      `https://api.izukino.tech/api/stylists?branchId=${branchId}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + token,
+        },
+      }
+    );
     const data = await res.json();
     if (res.ok) {
       return data.data;
@@ -208,13 +211,16 @@ function handleApproveButton(appointmentId) {
   }).then(async (result) => {
     if (!result.isConfirmed) return;
     try {
-      const res = await fetch(`api/appointments/${appointmentId}/approve`, {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: "Bearer " + token,
-        },
-      });
+      const res = await fetch(
+        `https://api.izukino.tech/api/appointments/${appointmentId}/approve`,
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + token,
+          },
+        }
+      );
       const data = await res.json();
       if (res.ok) {
         Swal.fire({
@@ -256,13 +262,16 @@ function handleDeleteButton(appointmentId) {
   }).then(async (result) => {
     if (!result.isConfirmed) return;
     try {
-      const res = await fetch(`api/appointments/${appointmentId}`, {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: "Bearer " + token,
-        },
-      });
+      const res = await fetch(
+        `https://api.izukino.tech/api/appointments/${appointmentId}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + token,
+          },
+        }
+      );
       const data = await res.json();
       if (res.ok) {
         Swal.fire({
@@ -369,13 +378,16 @@ function handleCompleteButton(appointmentId) {
   }).then(async (result) => {
     if (!result.isConfirmed) return;
     try {
-      const res = await fetch(`api/appointments/${appointmentId}/complete`, {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: "Bearer " + token,
-        },
-      });
+      const res = await fetch(
+        `https://api.izukino.tech/api/appointments/${appointmentId}/complete`,
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + token,
+          },
+        }
+      );
       const data = await res.json();
       if (res.ok) {
         Swal.fire({
@@ -467,14 +479,17 @@ async function handleAddServiceButton(appointmentId, currentServiceIds = []) {
     // Gọi API cập nhật dịch vụ cho lịch hẹn
     const token = localStorage.getItem("token");
     try {
-      const res = await fetch(`api/appointments/${appointmentId}/services`, {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: "Bearer " + token,
-        },
-        body: JSON.stringify({ serviceId: checked }),
-      });
+      const res = await fetch(
+        `https://api.izukino.tech/api/appointments/${appointmentId}/services`,
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + token,
+          },
+          body: JSON.stringify({ serviceId: checked }),
+        }
+      );
       const data = await res.json();
       if (res.ok) {
         Swal.fire({ icon: "success", title: "Cập nhật dịch vụ thành công!" });
@@ -531,7 +546,7 @@ function handleAddAppointmentSubmit(e) {
   }
 
   // Gửi dữ liệu lên backend
-  fetch("api/appointments/force", {
+  fetch("https://api.izukino.tech/api/appointments/force", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

@@ -14,7 +14,7 @@ function handleDeleteButton(serviceId) {
     if (!result.isConfirmed) return;
     try {
       const res = await fetch(
-        `http://157.66.100.145:4000/api/services/${serviceId}`,
+        `https://api.izukino.tech/api/services/${serviceId}`,
         {
           method: "DELETE",
           headers: {
@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const priceValue = Math.round(Number(price) * 1000);
       const token = localStorage.getItem("token");
       try {
-        const res = await fetch("http://157.66.100.145:4000/api/services", {
+        const res = await fetch("https://api.izukino.tech/api/services", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -181,7 +181,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const token = localStorage.getItem("token");
       try {
         const res = await fetch(
-          `http://157.66.100.145:4000/api/services/${serviceId}`,
+          `https://api.izukino.tech/api/services/${serviceId}`,
           {
             method: "PATCH",
             headers: {

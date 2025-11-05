@@ -1,15 +1,12 @@
 async function register(username, email, password) {
   try {
-    const response = await fetch(
-      "http://157.66.100.145:4000/api/auth/register",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ name: username, email, password }),
-      }
-    );
+    const response = await fetch("https://api.izukino.tech/api/auth/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name: username, email, password }),
+    });
     const data = await response.json();
     if (response.ok) {
       console.log("User registered successfully:", data);
@@ -23,7 +20,7 @@ async function register(username, email, password) {
 }
 async function login(email, password) {
   try {
-    const response = await fetch("http://157.66.100.145:4000/api/auth/login", {
+    const response = await fetch("https://api.izukino.tech/api/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

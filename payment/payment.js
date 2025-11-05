@@ -136,17 +136,14 @@ function renderReview() {
 async function createTransaction(appointmentId, cashierId, paymentMethod) {
   const token = localStorage.getItem("token");
   try {
-    const res = await fetch(
-      "http://localhost:3000http://157.66.100.145:4000/api/transactions",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: "Bearer " + token,
-        },
-        body: JSON.stringify({ appointmentId, cashierId, paymentMethod }),
-      }
-    );
+    const res = await fetch("https://api.izukino.tech/api/transactions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + token,
+      },
+      body: JSON.stringify({ appointmentId, cashierId, paymentMethod }),
+    });
     const data = await res.json();
 
     if (res.ok) {
@@ -214,8 +211,7 @@ async function submitReview(rating, comment, appointmentId) {
   const token = localStorage.getItem("token");
   try {
     const res = await fetch(
-      "http://localhost:3000http://157.66.100.145:4000/api/reviews/" +
-        appointmentId,
+      "https://api.izukino.tech/api/reviews/" + appointmentId,
       {
         method: "POST",
         headers: {
@@ -246,8 +242,7 @@ async function submitPayment(appointmentId) {
   const token = localStorage.getItem("token");
   try {
     const res = await fetch(
-      "http://localhost:3000http://157.66.100.145:4000/api/transactions/" +
-        appointmentId,
+      "https://api.izukino.tech/api/transactions/" + appointmentId,
       {
         method: "PATCH",
         headers: {

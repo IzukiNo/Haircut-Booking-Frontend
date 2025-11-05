@@ -47,7 +47,7 @@ function handleDeleteButton(userId) {
     if (!result.isConfirmed) return;
     try {
       const res = await fetch(
-        `http://157.66.100.145:4000/api/employees/${userId}`,
+        `https://api.izukino.tech/api/employees/${userId}`,
         {
           method: "DELETE",
           headers: {
@@ -400,7 +400,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       };
       const token = localStorage.getItem("token");
       try {
-        const res = await fetch("http://157.66.100.145:4000/api/employees", {
+        const res = await fetch("https://api.izukino.tech/api/employees", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -503,7 +503,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
       const token = localStorage.getItem("token");
       try {
-        const res = await fetch(`http://157.66.100.145:4000/api/employees`, {
+        const res = await fetch(`https://api.izukino.tech/api/employees`, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",

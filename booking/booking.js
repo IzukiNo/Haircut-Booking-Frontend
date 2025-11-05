@@ -8,7 +8,7 @@ async function getUserProfile() {
   }
 
   try {
-    const res = await fetch("http://157.66.100.145:4000/api/auth/me", {
+    const res = await fetch("https://api.izukino.tech/api/auth/me", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -35,7 +35,7 @@ async function getServiceList() {
     return null;
   }
   try {
-    const res = await fetch("http://157.66.100.145:4000/api/services", {
+    const res = await fetch("https://api.izukino.tech/api/services", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -62,7 +62,7 @@ async function getBranchList() {
     return null;
   }
   try {
-    const res = await fetch("http://157.66.100.145:4000/api/branches", {
+    const res = await fetch("https://api.izukino.tech/api/branches", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -90,7 +90,7 @@ async function getStylistListByBranch(branchId) {
   }
   try {
     const res = await fetch(
-      `http://157.66.100.145:4000/api/stylists?branchId=${branchId}`,
+      `https://api.izukino.tech/api/stylists?branchId=${branchId}`,
       {
         method: "GET",
         headers: {
@@ -120,7 +120,7 @@ async function bookingAppointment(appointmentData) {
   }
 
   try {
-    const res = await fetch("http://157.66.100.145:4000/api/appointments", {
+    const res = await fetch("https://api.izukino.tech/api/appointments", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

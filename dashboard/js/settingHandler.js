@@ -18,7 +18,7 @@ async function updateBranchSetting(branchId, data) {
   }
   try {
     const res = await fetch(
-      `http://157.66.100.145:4000/api/branches/${branchId}`,
+      `https://api.izukino.tech/api/branches/${branchId}`,
       {
         method: "PATCH",
         headers: {

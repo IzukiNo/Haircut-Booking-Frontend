@@ -64,7 +64,7 @@ async function getBranchList() {
     return null;
   }
   try {
-    const res = await fetch("http://157.66.100.145:4000/api/branches", {
+    const res = await fetch("https://api.izukino.tech/api/branches", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -100,7 +100,7 @@ async function getUserProfile() {
   }
 
   try {
-    const res = await fetch("http://157.66.100.145:4000/api/auth/me", {
+    const res = await fetch("https://api.izukino.tech/api/auth/me", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -136,7 +136,7 @@ async function getServiceList(page = 1, limit = 10) {
   }
   try {
     const res = await fetch(
-      `http://157.66.100.145:4000/api/services?page=${page}&limit=${limit}`,
+      `https://api.izukino.tech/api/services?page=${page}&limit=${limit}`,
       {
         method: "GET",
         headers: {
@@ -170,7 +170,7 @@ async function getEmployeesList(page = 1, limit = 10) {
   }
   try {
     const res = await fetch(
-      `http://157.66.100.145:4000/api/employees?page=${page}&limit=${limit}`,
+      `https://api.izukino.tech/api/employees?page=${page}&limit=${limit}`,
       {
         method: "GET",
         headers: {
@@ -204,7 +204,7 @@ async function getAppointmentsList(page = 1, limit = 10, status = "all") {
   }
   try {
     const res = await fetch(
-      `http://157.66.100.145:4000/api/appointments?status=${status}&limit=${limit}&page=${page}`,
+      `https://api.izukino.tech/api/appointments?status=${status}&limit=${limit}&page=${page}`,
       {
         method: "GET",
         headers: {
